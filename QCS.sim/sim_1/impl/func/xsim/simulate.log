@@ -1,0 +1,13 @@
+Time resolution is 1 ps
+Read Address: 0, Selected Register Data: xxxxxxxx
+Read Address: 0, Selected Register Data: xxxxxxxx
+Read Address: 0, Selected Register Data: 000004d2
+Address Latched: 00
+Success: REC register read passed
+Address Latched: 00
+Address Latched: 00
+Read Address: 1, Selected Register Data: 000004d2
+Read Address: 1, Selected Register Data: 0000162e
+Success: RPM register read passed
+Address Latched: 04
+$stop called at time : 140 ns : File "/home/duncan/QCS/QCS.srcs/sim_1/new/tb_QCS_AXI.v" Line 106

@@ -1,0 +1,8 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../QCS.gen/sources_1/bd/QCS_1/ipshared/ec67/hdl" --include "../../../../../QCS.gen/sources_1/bd/QCS_1/ipshared/30ef" --include "../../../../../QCS.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../../QCS.gen/sources_1/bd/design_1/ipshared/30ef" \
+"tb_QCS_AXI_func_impl.v" \
+"../../../../../../ip_repo/QCS_AXI_1_0/hdl/QCS_AXI_v1_0_S00_AXI.v" \
+"../../../../../QCS.srcs/sim_1/new/tb_QCS_AXI.v" \
+
+# Do not sort compile order
+nosort

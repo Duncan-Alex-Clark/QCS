@@ -1,0 +1,32 @@
+03:42:25 **** Incremental Build of configuration Debug for project Print_Registers ****
+make all 
+Building file: ../src/testperiph.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I/home/duncan/QCS/Vitis/QCS_1_wrapper/export/QCS_1_wrapper/sw/QCS_1_wrapper/standalone_microblaze_0/bspinclude/include -mno-xl-reorder -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'main':
+../src/testperiph.c:13:17: warning: unused variable 'intc' [-Wunused-variable]
+   13 |    static XIntc intc;
+      |                 ^~~~
+../src/testperiph.c: At top level:
+../src/testperiph.c:13:17: warning: 'intc' defined but not used [-Wunused-variable]
+Finished building: ../src/testperiph.c
+ 
+Building file: ../src/xintc_tapp_example.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xintc_tapp_example.o" -I/home/duncan/QCS/Vitis/QCS_1_wrapper/export/QCS_1_wrapper/sw/QCS_1_wrapper/standalone_microblaze_0/bspinclude/include -mno-xl-reorder -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/xintc_tapp_example.d" -MT"src/xintc_tapp_example.o" -o "src/xintc_tapp_example.o" "../src/xintc_tapp_example.c"
+Finished building: ../src/xintc_tapp_example.c
+ 
+Building target: Print_Registers.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L/home/duncan/QCS/Vitis/QCS_1_wrapper/export/QCS_1_wrapper/sw/QCS_1_wrapper/standalone_microblaze_0/bsplib/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Print_Registers.elf" ./src/testperiph.o ./src/xintc_tapp_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: Print_Registers.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size Print_Registers.elf  |tee "Print_Registers.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  63712	   1724	   2148	  67584	  10800	Print_Registers.elf
+Finished building: Print_Registers.elf.size
+ 
+
+03:42:26 Build Finished (took 582ms)
+

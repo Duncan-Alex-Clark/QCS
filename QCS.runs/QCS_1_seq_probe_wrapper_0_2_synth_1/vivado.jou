@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Mon Oct 21 17:05:45 2024
+# Process ID: 1904336
+# Current directory: /home/duncan/QCS/QCS.runs/QCS_1_seq_probe_wrapper_0_2_synth_1
+# Command line: vivado -log QCS_1_seq_probe_wrapper_0_2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source QCS_1_seq_probe_wrapper_0_2.tcl
+# Log file: /home/duncan/QCS/QCS.runs/QCS_1_seq_probe_wrapper_0_2_synth_1/QCS_1_seq_probe_wrapper_0_2.vds
+# Journal file: /home/duncan/QCS/QCS.runs/QCS_1_seq_probe_wrapper_0_2_synth_1/vivado.jou
+# Running On: duncan-Ub22, OS: Linux, CPU Frequency: 2200.000 MHz, CPU Physical cores: 16, Host memory: 16688 MB
+#-----------------------------------------------------------
+source QCS_1_seq_probe_wrapper_0_2.tcl -notrace

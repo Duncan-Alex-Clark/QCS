@@ -1,0 +1,171 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
+| Date         : Wed Oct 16 06:41:42 2024
+| Host         : duncan-Ub22 running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7a35ticsg324-1L
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'QCS_1_QCS_AXI_0_5'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of QCS_1_QCS_AXI_0_5 (user.org:user:QCS_AXI:1.0) from (Rev. 18) to (Rev. 19)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'QCS_1_QCS_AXI_0_5'. These changes may impact your design.
+
+
+-Upgrade has removed port 'adist'
+
+-Upgrade has removed port 'arpm'
+
+-Upgrade has removed port 'arpm_set'
+
+-Upgrade has removed port 'arpme'
+
+-Upgrade has removed port 'avel'
+
+-Upgrade has removed port 'avel_set'
+
+-Upgrade has removed port 'avele'
+
+-Upgrade has removed port 'control'
+
+-Upgrade has removed port 'ddia'
+
+-Upgrade has removed port 'drat'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
+| Date         : Wed Oct 16 06:33:59 2024
+| Host         : duncan-Ub22 running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7a35ticsg324-1L
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'QCS_1_QCS_AXI_0_5'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of QCS_1_QCS_AXI_0_5 (user.org:user:QCS_AXI:1.0) from (Rev. 17) to (Rev. 18)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
+| Date         : Wed Oct 16 06:04:31 2024
+| Host         : duncan-Ub22 running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7a35ticsg324-1L
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'QCS_1_QCS_AXI_0_5'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of QCS_1_QCS_AXI_0_5 (user.org:user:QCS_AXI:1.0) from (Rev. 16) to (Rev. 17)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
+| Date         : Tue Oct 15 12:24:13 2024
+| Host         : duncan-Ub22 running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7a35ticsg324-1L
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'QCS_1_QCS_AXI_0_5'
+
+1. Summary
+----------
+
+SUCCESS in the update of QCS_1_QCS_AXI_0_5 (user.org:user:QCS_AXI:1.0 (Rev. 16)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
+| Date         : Tue Oct 15 12:23:30 2024
+| Host         : duncan-Ub22 running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7a35ticsg324-1L
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'QCS_1_QCS_AXI_0_5'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of QCS_1_QCS_AXI_0_5 (user.org:user:QCS_AXI:1.0) from (Rev. 15) to (Rev. 16)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
+| Date         : Tue Oct 15 12:08:25 2024
+| Host         : duncan-Ub22 running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7a35ticsg324-1L
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'QCS_1_QCS_AXI_0_5'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of QCS_1_QCS_AXI_0_5 (user.org:user:QCS_AXI:1.0) from (Rev. 14) to (Rev. 15)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
+| Date         : Tue Oct 15 12:06:50 2024
+| Host         : duncan-Ub22 running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7a35ticsg324-1L
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'QCS_1_QCS_AXI_0_5'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of QCS_1_QCS_AXI_0_5 (user.org:user:QCS_AXI:1.0) from (Rev. 12) to (Rev. 14)
+
