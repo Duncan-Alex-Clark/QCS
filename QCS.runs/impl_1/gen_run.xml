@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1729545408">
+<GenRun Id="impl_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1729686608">
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="design_2_wrapper_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS" Name="design_2_wrapper_routed.rqs"/>
@@ -25,12 +25,12 @@
   <File Type="BG-BIN" Name="design_2_wrapper.bin"/>
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="BG-BIT" Name="design_2_wrapper.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="seq_probe_wrapper_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="seq_probe_wrapper_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="seq_probe_wrapper_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="seq_probe_wrapper_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="seq_probe_wrapper_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="seq_probe_wrapper_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="design_2_wrapper_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="design_2_wrapper_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="design_2_wrapper_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="design_2_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="design_2_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="design_2_wrapper_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="design_2_wrapper_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="design_2_wrapper_postroute_physopt.dcp"/>
   <File Type="BG-DRC" Name="design_2_wrapper.drc"/>
@@ -86,7 +86,7 @@
   <File Type="PA-TCL" Name="design_2_wrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/QCS.v">
+    <File Path="$PSRCDIR/sources_1/new/divider.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -94,6 +94,27 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/encoding_sequencer.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/seq_probe/seq_probe.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/seq_probe/hdl/seq_probe_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/QCS.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -109,30 +130,6 @@
     </File>
     <File Path="$PGENDIR/sources_1/bd/design_2/hdl/design_2_wrapper.v">
       <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/divider.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/bd/seq_probe/seq_probe.bd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PGENDIR/sources_1/bd/seq_probe/hdl/seq_probe_wrapper.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -244,18 +241,19 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_lmb_bram_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="QCS_1_seq_probe_wrapper_0_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="seq_probe_divider_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_seq_probe_wrapper_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="seq_probe_encoding_sequencer_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_lmb_bram_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="seq_probe_divider_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="seq_probe_c_counter_binary_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="QCS_1_QCS_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="QCS_1_dlmb_bram_if_cntlr_1"/>
   <BlockFileSet Type="BlockSrcs" Name="QCS_1_lmb_bram_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_clk_wiz_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="QCS_1_clk_wiz_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_microblaze_0_axi_intc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_QCS_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_xbar_1"/>
   <BlockFileSet Type="BlockSrcs" Name="QCS_1_ilmb_bram_if_cntlr_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_microblaze_0_1"/>

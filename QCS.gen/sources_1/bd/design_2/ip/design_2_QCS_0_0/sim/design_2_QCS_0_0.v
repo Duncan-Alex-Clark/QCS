@@ -59,9 +59,7 @@ module design_2_QCS_0_0 (
   rst,
   ch_a,
   ch_b,
-  ch_z,
   ppr,
-  ch_z_out,
   REC,
   RPM
 );
@@ -74,20 +72,18 @@ input wire clk;
 input wire rst;
 input wire ch_a;
 input wire ch_b;
-input wire ch_z;
 input wire [31 : 0] ppr;
-output wire ch_z_out;
 output wire [31 : 0] REC;
 output wire [31 : 0] RPM;
 
-  QCS inst (
+  QCS #(
+    .rpm_lut_size(1)
+  ) inst (
     .clk(clk),
     .rst(rst),
     .ch_a(ch_a),
     .ch_b(ch_b),
-    .ch_z(ch_z),
     .ppr(ppr),
-    .ch_z_out(ch_z_out),
     .REC(REC),
     .RPM(RPM)
   );

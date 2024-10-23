@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x42602F11049189C8",
+      "boundary_crc": "0x21CF95B6F02334A8",
       "device": "xc7a35ticsg324-1L",
       "gen_directory": "../../../../QCS.gen/sources_1/bd/design_2",
       "name": "design_2",
@@ -31,36 +31,12 @@
       "clk_wiz_1": "",
       "rst_clk_wiz_1_100M": "",
       "axi_uartlite_0": "",
-      "QCS_0": "",
       "QCS_AXI_0": "",
+      "QCS_0": "",
+      "ila_0": "",
       "seq_probe_wrapper_0": ""
     },
     "interface_ports": {
-      "CLK100MHZ": {
-        "mode": "Slave",
-        "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
-        "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0",
-        "parameters": {
-          "CAN_DEBUG": {
-            "value": "false",
-            "value_src": "default"
-          },
-          "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "default"
-          }
-        },
-        "port_maps": {
-          "CLK_N": {
-            "physical_name": "CLK100MHZ_clk_n",
-            "direction": "I"
-          },
-          "CLK_P": {
-            "physical_name": "CLK100MHZ_clk_p",
-            "direction": "I"
-          }
-        }
-      },
       "usb_uart": {
         "mode": "Master",
         "vlnv_bus_definition": "xilinx.com:interface:uart:1.0",
@@ -99,6 +75,18 @@
       },
       "led_3": {
         "direction": "O"
+      },
+      "sys_clock": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "100000000"
+          },
+          "PHASE": {
+            "value": "0.0"
+          }
+        }
       }
     },
     "components": {
@@ -819,8 +807,53 @@
         "xci_path": "ip/design_2_clk_wiz_1_0/design_2_clk_wiz_1_0.xci",
         "inst_hier_path": "clk_wiz_1",
         "parameters": {
+          "CLKOUT1_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT1_JITTER": {
+            "value": "137.681"
+          },
+          "CLKOUT1_PHASE_ERROR": {
+            "value": "105.461"
+          },
+          "CLKOUT2_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT3_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT4_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT5_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT6_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT7_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLK_IN1_BOARD_INTERFACE": {
+            "value": "sys_clock"
+          },
+          "MMCM_BANDWIDTH": {
+            "value": "OPTIMIZED"
+          },
+          "MMCM_CLKFBOUT_MULT_F": {
+            "value": "9"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "9"
+          },
+          "MMCM_COMPENSATION": {
+            "value": "ZHOLD"
+          },
+          "PRIMITIVE": {
+            "value": "PLL"
+          },
           "PRIM_SOURCE": {
-            "value": "Differential_clock_capable_pin"
+            "value": "Single_ended_clock_capable_pin"
           },
           "RESET_BOARD_INTERFACE": {
             "value": "reset"
@@ -864,6 +897,12 @@
           }
         }
       },
+      "QCS_AXI_0": {
+        "vlnv": "user.org:user:QCS_AXI:1.0",
+        "xci_name": "design_2_QCS_AXI_0_0",
+        "xci_path": "ip/design_2_QCS_AXI_0_0/design_2_QCS_AXI_0_0.xci",
+        "inst_hier_path": "QCS_AXI_0"
+      },
       "QCS_0": {
         "vlnv": "xilinx.com:module_ref:QCS:1.0",
         "xci_name": "design_2_QCS_0_0",
@@ -882,10 +921,6 @@
               "ASSOCIATED_RESET": {
                 "value": "rst",
                 "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_2_clk_wiz_1_0_clk_out1",
-                "value_src": "default_prop"
               }
             }
           },
@@ -899,16 +934,10 @@
           "ch_b": {
             "direction": "I"
           },
-          "ch_z": {
-            "direction": "I"
-          },
           "ppr": {
             "direction": "I",
             "left": "31",
             "right": "0"
-          },
-          "ch_z_out": {
-            "direction": "O"
           },
           "REC": {
             "direction": "O",
@@ -922,11 +951,16 @@
           }
         }
       },
-      "QCS_AXI_0": {
-        "vlnv": "user.org:user:QCS_AXI:1.0",
-        "xci_name": "design_2_QCS_AXI_0_0",
-        "xci_path": "ip/design_2_QCS_AXI_0_0/design_2_QCS_AXI_0_0.xci",
-        "inst_hier_path": "QCS_AXI_0"
+      "ila_0": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "xci_name": "design_2_ila_0_0",
+        "xci_path": "ip/design_2_ila_0_0/design_2_ila_0_0.xci",
+        "inst_hier_path": "ila_0",
+        "parameters": {
+          "C_SLOT_0_AXI_PROTOCOL": {
+            "value": "AXI4LITE"
+          }
+        }
       },
       "seq_probe_wrapper_0": {
         "vlnv": "xilinx.com:module_ref:seq_probe_wrapper:1.0",
@@ -964,12 +998,6 @@
       }
     },
     "interface_nets": {
-      "CLK_IN1_D_0_1": {
-        "interface_ports": [
-          "CLK100MHZ",
-          "clk_wiz_1/CLK_IN1_D"
-        ]
-      },
       "axi_uartlite_0_UART": {
         "interface_ports": [
           "usb_uart",
@@ -990,8 +1018,9 @@
       },
       "microblaze_0_axi_periph_M02_AXI": {
         "interface_ports": [
+          "QCS_AXI_0/S00_AXI",
           "microblaze_0_axi_periph/M02_AXI",
-          "QCS_AXI_0/S00_AXI"
+          "ila_0/SLOT_0_AXI"
         ]
       },
       "microblaze_0_debug": {
@@ -1038,12 +1067,6 @@
           "QCS_AXI_0/rpm"
         ]
       },
-      "QCS_0_ch_z_out": {
-        "ports": [
-          "QCS_0/ch_z_out",
-          "QCS_0/ch_z"
-        ]
-      },
       "QCS_AXI_0_ppr": {
         "ports": [
           "QCS_AXI_0/ppr",
@@ -1059,7 +1082,28 @@
       "btn_0_1": {
         "ports": [
           "btn_0",
-          "rst_clk_wiz_1_100M/aux_reset_in"
+          "QCS_0/rst",
+          "seq_probe_wrapper_0/btn_0"
+        ]
+      },
+      "clk_wiz_1_clk_out1": {
+        "ports": [
+          "clk_wiz_1/clk_out1",
+          "axi_uartlite_0/s_axi_aclk",
+          "microblaze_0_axi_periph/M01_ACLK",
+          "microblaze_0/Clk",
+          "microblaze_0_local_memory/LMB_Clk",
+          "microblaze_0_axi_periph/S00_ACLK",
+          "microblaze_0_axi_intc/processor_clk",
+          "microblaze_0_axi_intc/s_axi_aclk",
+          "microblaze_0_axi_periph/M00_ACLK",
+          "microblaze_0_axi_periph/ACLK",
+          "microblaze_0_axi_periph/M02_ACLK",
+          "QCS_AXI_0/s00_axi_aclk",
+          "QCS_0/clk",
+          "rst_clk_wiz_1_100M/slowest_sync_clk",
+          "ila_0/clk",
+          "seq_probe_wrapper_0/clk_in_100mhz"
         ]
       },
       "clk_wiz_1_locked": {
@@ -1072,25 +1116,6 @@
         "ports": [
           "mdm_1/Debug_SYS_Rst",
           "rst_clk_wiz_1_100M/mb_debug_sys_rst"
-        ]
-      },
-      "microblaze_0_Clk": {
-        "ports": [
-          "clk_wiz_1/clk_out1",
-          "microblaze_0/Clk",
-          "microblaze_0_axi_periph/ACLK",
-          "microblaze_0_axi_periph/S00_ACLK",
-          "microblaze_0_axi_periph/M00_ACLK",
-          "microblaze_0_axi_intc/s_axi_aclk",
-          "microblaze_0_axi_intc/processor_clk",
-          "microblaze_0_local_memory/LMB_Clk",
-          "rst_clk_wiz_1_100M/slowest_sync_clk",
-          "axi_uartlite_0/s_axi_aclk",
-          "microblaze_0_axi_periph/M01_ACLK",
-          "QCS_0/clk",
-          "QCS_AXI_0/s00_axi_aclk",
-          "microblaze_0_axi_periph/M02_ACLK",
-          "seq_probe_wrapper_0/clk_in_100mhz"
         ]
       },
       "microblaze_0_intr": {
@@ -1112,12 +1137,6 @@
           "microblaze_0_local_memory/SYS_Rst"
         ]
       },
-      "rst_clk_wiz_1_100M_interconnect_aresetn": {
-        "ports": [
-          "rst_clk_wiz_1_100M/interconnect_aresetn",
-          "QCS_0/rst"
-        ]
-      },
       "rst_clk_wiz_1_100M_mb_reset": {
         "ports": [
           "rst_clk_wiz_1_100M/mb_reset",
@@ -1136,12 +1155,6 @@
           "microblaze_0_axi_periph/M01_ARESETN",
           "QCS_AXI_0/s00_axi_aresetn",
           "microblaze_0_axi_periph/M02_ARESETN"
-        ]
-      },
-      "rst_clk_wiz_1_100M_peripheral_reset": {
-        "ports": [
-          "rst_clk_wiz_1_100M/peripheral_reset",
-          "seq_probe_wrapper_0/btn_0"
         ]
       },
       "seq_probe_wrapper_0_ch_a_out": {
@@ -1172,6 +1185,12 @@
         "ports": [
           "seq_probe_wrapper_0/led_3",
           "led_3"
+        ]
+      },
+      "sys_clock_1": {
+        "ports": [
+          "sys_clock",
+          "clk_wiz_1/clk_in1"
         ]
       }
     },

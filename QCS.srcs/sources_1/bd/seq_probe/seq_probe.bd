@@ -7,8 +7,7 @@
       "name": "seq_probe",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2023.1",
-      "validated": "true"
+      "tool_version": "2023.1"
     },
     "design_tree": {
       "c_counter_binary_0": "",
@@ -18,46 +17,22 @@
     "ports": {
       "btn_0": {
         "type": "data",
-        "direction": "I",
-        "parameters": {
-          "LAYERED_METADATA": {
-            "value": "undef",
-            "value_src": "default"
-          }
-        }
+        "direction": "I"
       },
       "led_1": {
         "type": "data",
-        "direction": "O",
-        "parameters": {
-          "LAYERED_METADATA": {
-            "value": "undef",
-            "value_src": "default"
-          }
-        }
+        "direction": "O"
       },
       "clk_in_100mhz": {
         "direction": "I"
       },
       "ch_a_out": {
         "type": "data",
-        "direction": "O",
-        "parameters": {
-          "LAYERED_METADATA": {
-            "value": "undef",
-            "value_src": "default"
-          }
-        }
+        "direction": "O"
       },
       "ch_b_out": {
         "type": "data",
-        "direction": "O",
-        "parameters": {
-          "LAYERED_METADATA": {
-            "value": "undef",
-            "value_src": "default"
-          }
-        }
+        "direction": "O"
       },
       "led_3": {
         "direction": "O"
@@ -125,19 +100,7 @@
           "counter": {
             "direction": "I",
             "left": "31",
-            "right": "0",
-            "parameters": {
-              "LAYERED_METADATA": {
-                "value": [
-                  "xilinx.com:interface:datatypes:1.0 {",
-                  "DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum",
-                  "{} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool",
-                  "minimum {} maximum {}} value false}}}} DATA_WIDTH 32",
-                  "}"
-                ],
-                "value_src": "ip_prop"
-              }
-            }
+            "right": "0"
           },
           "clk_out": {
             "direction": "O"
@@ -149,8 +112,8 @@
       "btn_0_1": {
         "ports": [
           "btn_0",
-          "encoding_sequencer_0/rst",
-          "led_1"
+          "led_1",
+          "encoding_sequencer_0/rst"
         ]
       },
       "c_counter_binary_0_Q": {

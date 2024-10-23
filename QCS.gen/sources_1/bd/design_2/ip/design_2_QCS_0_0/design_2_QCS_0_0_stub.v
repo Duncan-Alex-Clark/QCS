@@ -2,11 +2,11 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Fri Oct 18 21:20:24 2024
+// Date        : Wed Oct 23 04:51:49 2024
 // Host        : duncan-Ub22 running 64-bit Ubuntu 22.04.5 LTS
-// Command     : write_verilog -force -mode synth_stub -rename_top design_2_QCS_0_0 -prefix
-//               design_2_QCS_0_0_ QCS_1_QCS_0_0_stub.v
-// Design      : QCS_1_QCS_0_0
+// Command     : write_verilog -force -mode synth_stub
+//               /home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_QCS_0_0/design_2_QCS_0_0_stub.v
+// Design      : design_2_QCS_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35ticsg324-1L
 // --------------------------------------------------------------------------------
@@ -15,16 +15,14 @@
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* X_CORE_INFO = "QCS,Vivado 2023.1" *)
-module design_2_QCS_0_0(clk, rst, ch_a, ch_b, ch_z, ppr, ch_z_out, REC, RPM)
-/* synthesis syn_black_box black_box_pad_pin="rst,ch_a,ch_b,ch_z,ppr[31:0],ch_z_out,REC[31:0],RPM[31:0]" */
+module design_2_QCS_0_0(clk, rst, ch_a, ch_b, ppr, REC, RPM)
+/* synthesis syn_black_box black_box_pad_pin="rst,ch_a,ch_b,ppr[31:0],REC[31:0],RPM[31:0]" */
 /* synthesis syn_force_seq_prim="clk" */;
   input clk /* synthesis syn_isclock = 1 */;
   input rst;
   input ch_a;
   input ch_b;
-  input ch_z;
   input [31:0]ppr;
-  output ch_z_out;
   output [31:0]REC;
   output [31:0]RPM;
 endmodule

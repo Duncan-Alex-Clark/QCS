@@ -5,6 +5,18 @@
 
 # XDC: new/master.xdc
 
+# Block Designs: bd/seq_probe/seq_probe.bd
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==seq_probe || ORIG_REF_NAME==seq_probe} -quiet] -quiet
+
+# IP: bd/seq_probe/ip/seq_probe_c_counter_binary_0_0/seq_probe_c_counter_binary_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==seq_probe_c_counter_binary_0_0 || ORIG_REF_NAME==seq_probe_c_counter_binary_0_0} -quiet] -quiet
+
+# IP: bd/seq_probe/ip/seq_probe_divider_0_0/seq_probe_divider_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==seq_probe_divider_0_0 || ORIG_REF_NAME==seq_probe_divider_0_0} -quiet] -quiet
+
+# IP: bd/seq_probe/ip/seq_probe_encoding_sequencer_0_0/seq_probe_encoding_sequencer_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==seq_probe_encoding_sequencer_0_0 || ORIG_REF_NAME==seq_probe_encoding_sequencer_0_0} -quiet] -quiet
+
 # Block Designs: bd/design_2/design_2.bd
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2 || ORIG_REF_NAME==design_2} -quiet] -quiet
 
@@ -50,27 +62,32 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_rs
 # IP: bd/design_2/ip/design_2_axi_uartlite_0_0/design_2_axi_uartlite_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_axi_uartlite_0_0 || ORIG_REF_NAME==design_2_axi_uartlite_0_0} -quiet] -quiet
 
-# IP: bd/design_2/ip/design_2_QCS_0_0/design_2_QCS_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_QCS_0_0 || ORIG_REF_NAME==design_2_QCS_0_0} -quiet] -quiet
-
-# IP: bd/design_2/ip/design_2_encoding_sequencer_0_0/design_2_encoding_sequencer_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_encoding_sequencer_0_0 || ORIG_REF_NAME==design_2_encoding_sequencer_0_0} -quiet] -quiet
-
 # IP: bd/design_2/ip/design_2_QCS_AXI_0_0/design_2_QCS_AXI_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_QCS_AXI_0_0 || ORIG_REF_NAME==design_2_QCS_AXI_0_0} -quiet] -quiet
 
-# Block Designs: bd/seq_probe/seq_probe.bd
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==seq_probe || ORIG_REF_NAME==seq_probe} -quiet] -quiet
+# IP: bd/design_2/ip/design_2_seq_probe_wrapper_0_0/design_2_seq_probe_wrapper_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_seq_probe_wrapper_0_0 || ORIG_REF_NAME==design_2_seq_probe_wrapper_0_0} -quiet] -quiet
 
-# IP: bd/seq_probe/ip/seq_probe_encoding_sequencer_0_0/seq_probe_encoding_sequencer_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==seq_probe_encoding_sequencer_0_0 || ORIG_REF_NAME==seq_probe_encoding_sequencer_0_0} -quiet] -quiet
+# Block Designs: bd/seq_probe/seq_probe.bd
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==seq_probe || ORIG_REF_NAME==seq_probe} -quiet] -quiet
 
 # IP: bd/seq_probe/ip/seq_probe_c_counter_binary_0_0/seq_probe_c_counter_binary_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==seq_probe_c_counter_binary_0_0 || ORIG_REF_NAME==seq_probe_c_counter_binary_0_0} -quiet] -quiet
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==seq_probe_c_counter_binary_0_0 || ORIG_REF_NAME==seq_probe_c_counter_binary_0_0} -quiet] -quiet
 
 # IP: bd/seq_probe/ip/seq_probe_divider_0_0/seq_probe_divider_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==seq_probe_divider_0_0 || ORIG_REF_NAME==seq_probe_divider_0_0} -quiet] -quiet
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==seq_probe_divider_0_0 || ORIG_REF_NAME==seq_probe_divider_0_0} -quiet] -quiet
 
-# XDC: /home/duncan/QCS/QCS.gen/sources_1/bd/design_2/design_2_ooc.xdc
+# IP: bd/seq_probe/ip/seq_probe_encoding_sequencer_0_0/seq_probe_encoding_sequencer_0_0.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==seq_probe_encoding_sequencer_0_0 || ORIG_REF_NAME==seq_probe_encoding_sequencer_0_0} -quiet] -quiet
+
+# IP: bd/design_2/ip/design_2_QCS_0_0/design_2_QCS_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_QCS_0_0 || ORIG_REF_NAME==design_2_QCS_0_0} -quiet] -quiet
+
+# IP: bd/design_2/ip/design_2_ila_0_0/design_2_ila_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_ila_0_0 || ORIG_REF_NAME==design_2_ila_0_0} -quiet] -quiet
 
 # XDC: /home/duncan/QCS/QCS.gen/sources_1/bd/seq_probe/seq_probe_ooc.xdc
+
+# XDC: /home/duncan/QCS/QCS.gen/sources_1/bd/seq_probe/seq_probe_ooc.xdc
+
+# XDC: /home/duncan/QCS/QCS.gen/sources_1/bd/design_2/design_2_ooc.xdc

@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "QCS,Vivado 2023.1" *)
 (* CHECK_LICENSE_TYPE = "design_2_QCS_0_0,QCS,{}" *)
-(* CORE_GENERATION_INFO = "design_2_QCS_0_0,QCS,{x_ipProduct=Vivado 2023.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=QCS,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* CORE_GENERATION_INFO = "design_2_QCS_0_0,QCS,{x_ipProduct=Vivado 2023.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=QCS,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,rpm_lut_size=1}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_2_QCS_0_0 (
@@ -60,9 +60,7 @@ module design_2_QCS_0_0 (
   rst,
   ch_a,
   ch_b,
-  ch_z,
   ppr,
-  ch_z_out,
   REC,
   RPM
 );
@@ -75,20 +73,18 @@ input wire clk;
 input wire rst;
 input wire ch_a;
 input wire ch_b;
-input wire ch_z;
 input wire [31 : 0] ppr;
-output wire ch_z_out;
 output wire [31 : 0] REC;
 output wire [31 : 0] RPM;
 
-  QCS inst (
+  QCS #(
+    .rpm_lut_size(1)
+  ) inst (
     .clk(clk),
     .rst(rst),
     .ch_a(ch_a),
     .ch_b(ch_b),
-    .ch_z(ch_z),
     .ppr(ppr),
-    .ch_z_out(ch_z_out),
     .REC(REC),
     .RPM(RPM)
   );

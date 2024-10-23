@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Mon Oct 21 17:16:51 2024
-# Process ID: 1951977
+# Start of session at: Wed Oct 23 04:58:18 2024
+# Process ID: 41721
 # Current directory: /home/duncan/QCS/QCS.runs/design_2_clk_wiz_1_0_synth_1
 # Command line: vivado -log design_2_clk_wiz_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_2_clk_wiz_1_0.tcl
 # Log file: /home/duncan/QCS/QCS.runs/design_2_clk_wiz_1_0_synth_1/design_2_clk_wiz_1_0.vds
 # Journal file: /home/duncan/QCS/QCS.runs/design_2_clk_wiz_1_0_synth_1/vivado.jou
-# Running On: duncan-Ub22, OS: Linux, CPU Frequency: 4181.179 MHz, CPU Physical cores: 16, Host memory: 16688 MB
+# Running On: duncan-Ub22, OS: Linux, CPU Frequency: 2200.000 MHz, CPU Physical cores: 16, Host memory: 16688 MB
 #-----------------------------------------------------------
 source design_2_clk_wiz_1_0.tcl -notrace

@@ -7,8 +7,7 @@
       "name": "QCS_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2023.1",
-      "validated": "true"
+      "tool_version": "2023.1"
     },
     "design_tree": {
       "microblaze_0_axi_periph": {
@@ -33,8 +32,8 @@
         "ilmb_bram_if_cntlr": "",
         "lmb_bram": ""
       },
-      "QCS_0": "",
       "ila_0": "",
+      "QCS_0": "",
       "seq_probe_wrapper_0": ""
     },
     "interface_ports": {
@@ -59,10 +58,6 @@
         "type": "rst",
         "direction": "I",
         "parameters": {
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
           "POLARITY": {
             "value": "ACTIVE_LOW"
           }
@@ -72,20 +67,8 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
-          "CLK_DOMAIN": {
-            "value": "QCS_1_sys_clock",
-            "value_src": "default"
-          },
           "FREQ_HZ": {
             "value": "100000000"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
           },
           "PHASE": {
             "value": "0.0"
@@ -940,6 +923,29 @@
           }
         }
       },
+      "ila_0": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "xci_name": "QCS_1_ila_0_0",
+        "xci_path": "ip/QCS_1_ila_0_0/QCS_1_ila_0_0.xci",
+        "inst_hier_path": "ila_0",
+        "parameters": {
+          "C_DATA_DEPTH": {
+            "value": "1024"
+          },
+          "C_MONITOR_TYPE": {
+            "value": "Native"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "4"
+          },
+          "C_PROBE2_WIDTH": {
+            "value": "32"
+          },
+          "C_PROBE3_WIDTH": {
+            "value": "32"
+          }
+        }
+      },
       "QCS_0": {
         "vlnv": "xilinx.com:module_ref:QCS:1.0",
         "xci_name": "QCS_1_QCS_0_0",
@@ -971,16 +977,10 @@
           "ch_b": {
             "direction": "I"
           },
-          "ch_z": {
-            "direction": "I"
-          },
           "ppr": {
             "direction": "I",
             "left": "31",
             "right": "0"
-          },
-          "ch_z_out": {
-            "direction": "O"
           },
           "REC": {
             "direction": "O",
@@ -991,29 +991,6 @@
             "direction": "O",
             "left": "31",
             "right": "0"
-          }
-        }
-      },
-      "ila_0": {
-        "vlnv": "xilinx.com:ip:ila:6.2",
-        "xci_name": "QCS_1_ila_0_0",
-        "xci_path": "ip/QCS_1_ila_0_0/QCS_1_ila_0_0.xci",
-        "inst_hier_path": "ila_0",
-        "parameters": {
-          "C_DATA_DEPTH": {
-            "value": "1024"
-          },
-          "C_MONITOR_TYPE": {
-            "value": "Native"
-          },
-          "C_NUM_OF_PROBES": {
-            "value": "4"
-          },
-          "C_PROBE2_WIDTH": {
-            "value": "32"
-          },
-          "C_PROBE3_WIDTH": {
-            "value": "32"
           }
         }
       },
@@ -1038,21 +1015,7 @@
             "direction": "O"
           },
           "clk_in_100mhz": {
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_1_clk_out1",
-                "value_src": "ip_prop"
-              }
-            }
+            "direction": "I"
           },
           "led_1": {
             "direction": "O"
@@ -1137,12 +1100,6 @@
           "ila_0/probe3"
         ]
       },
-      "QCS_0_ch_z_out": {
-        "ports": [
-          "QCS_0/ch_z_out",
-          "QCS_0/ch_z"
-        ]
-      },
       "QCS_AXI_0_ppr": {
         "ports": [
           "QCS_AXI_0/ppr",
@@ -1195,8 +1152,8 @@
           "microblaze_0_axi_intc/s_axi_aclk",
           "microblaze_0_axi_intc/processor_clk",
           "microblaze_0_local_memory/LMB_Clk",
-          "QCS_0/clk",
           "ila_0/clk",
+          "QCS_0/clk",
           "seq_probe_wrapper_0/clk_in_100mhz"
         ]
       },
@@ -1236,15 +1193,15 @@
       "seq_probe_wrapper_0_ch_a_out": {
         "ports": [
           "seq_probe_wrapper_0/ch_a_out",
-          "QCS_0/ch_a",
-          "ila_0/probe0"
+          "ila_0/probe0",
+          "QCS_0/ch_a"
         ]
       },
       "seq_probe_wrapper_0_ch_b_out": {
         "ports": [
           "seq_probe_wrapper_0/ch_b_out",
-          "QCS_0/ch_b",
-          "ila_0/probe1"
+          "ila_0/probe1",
+          "QCS_0/ch_b"
         ]
       },
       "seq_probe_wrapper_0_led_1": {

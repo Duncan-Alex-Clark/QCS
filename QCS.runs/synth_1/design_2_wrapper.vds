@@ -3,20 +3,20 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Mon Oct 21 17:17:49 2024
-# Process ID: 1952294
+# Start of session at: Wed Oct 23 08:30:11 2024
+# Process ID: 363598
 # Current directory: /home/duncan/QCS/QCS.runs/synth_1
 # Command line: vivado -log design_2_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_2_wrapper.tcl
 # Log file: /home/duncan/QCS/QCS.runs/synth_1/design_2_wrapper.vds
 # Journal file: /home/duncan/QCS/QCS.runs/synth_1/vivado.jou
-# Running On: duncan-Ub22, OS: Linux, CPU Frequency: 2200.000 MHz, CPU Physical cores: 16, Host memory: 16688 MB
+# Running On: duncan-Ub22, OS: Linux, CPU Frequency: 2195.052 MHz, CPU Physical cores: 16, Host memory: 16688 MB
 #-----------------------------------------------------------
 source design_2_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2068.152 ; gain = 122.992 ; free physical = 3854 ; free virtual = 7111
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2067.668 ; gain = 121.992 ; free physical = 4970 ; free virtual = 14849
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/duncan/ip_repo/QCS_AXI_1_0'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/media/duncan/Data/Vivado/2023.1/data/ip'.
-add_files: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2312.016 ; gain = 216.051 ; free physical = 3717 ; free virtual = 6975
+add_files: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2363.109 ; gain = 268.629 ; free physical = 4857 ; free virtual = 14736
 Command: read_checkpoint -auto_incremental -incremental /home/duncan/QCS/QCS.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/duncan/QCS/QCS.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -24,71 +24,81 @@ Command: synth_design -top design_2_wrapper -part xc7a35ticsg324-1L
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
-INFO: [Vivado_Tcl 4-1810] synth_design options have changed between reference and incremental; A full resynthesis will be run
 INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1952379
+INFO: [Synth 8-7075] Helper process launched with PID 363808
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2851.543 ; gain = 368.727 ; free physical = 2799 ; free virtual = 6059
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2872.824 ; gain = 371.734 ; free physical = 3930 ; free virtual = 13809
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_2_wrapper' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/hdl/design_2_wrapper.v:13]
 INFO: [Synth 8-6157] synthesizing module 'design_2' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:13]
-INFO: [Synth 8-6157] synthesizing module 'design_2_QCS_0_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_QCS_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_QCS_0_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_QCS_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_QCS_AXI_0_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_QCS_AXI_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_QCS_AXI_0_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_QCS_AXI_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_axi_uartlite_0_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_axi_uartlite_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_axi_uartlite_0_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_axi_uartlite_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_clk_wiz_1_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_clk_wiz_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_clk_wiz_1_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_clk_wiz_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_encoding_sequencer_0_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_encoding_sequencer_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_encoding_sequencer_0_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_encoding_sequencer_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_mdm_1_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_mdm_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_mdm_1_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_mdm_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_microblaze_0_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_microblaze_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_microblaze_0_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_microblaze_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_microblaze_0_axi_intc_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_microblaze_0_axi_intc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_microblaze_0_axi_intc_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_microblaze_0_axi_intc_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_microblaze_0_axi_periph_0' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:442]
-INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_11CD1WM' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1038]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_11CD1WM' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1038]
-INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_TCH0CN' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1170]
-INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_TCH0CN' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1170]
-INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_10F4R51' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1302]
-INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_10F4R51' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1302]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_ZF502S' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1682]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_ZF502S' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1682]
-INFO: [Synth 8-6157] synthesizing module 'design_2_xbar_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_xbar_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_microblaze_0_axi_periph_0' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:442]
-INFO: [Synth 8-6157] synthesizing module 'microblaze_0_local_memory_imp_MFYM5E' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1448]
-INFO: [Synth 8-6157] synthesizing module 'design_2_dlmb_bram_if_cntlr_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_dlmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_dlmb_bram_if_cntlr_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_dlmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_dlmb_v10_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_dlmb_v10_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_dlmb_v10_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_dlmb_v10_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'design_2_dlmb_v10_0' is unconnected for instance 'dlmb_v10' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1594]
-WARNING: [Synth 8-7023] instance 'dlmb_v10' of module 'design_2_dlmb_v10_0' has 25 connections declared, but only 24 given [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1594]
-INFO: [Synth 8-6157] synthesizing module 'design_2_ilmb_bram_if_cntlr_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_ilmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_ilmb_bram_if_cntlr_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_ilmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_ilmb_v10_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_ilmb_v10_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_ilmb_v10_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_ilmb_v10_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'design_2_ilmb_v10_0' is unconnected for instance 'ilmb_v10' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1640]
-WARNING: [Synth 8-7023] instance 'ilmb_v10' of module 'design_2_ilmb_v10_0' has 25 connections declared, but only 24 given [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1640]
-INFO: [Synth 8-6157] synthesizing module 'design_2_lmb_bram_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_lmb_bram_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_lmb_bram_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_lmb_bram_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'rsta_busy' of module 'design_2_lmb_bram_0' is unconnected for instance 'lmb_bram' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1665]
-WARNING: [Synth 8-7071] port 'rstb_busy' of module 'design_2_lmb_bram_0' is unconnected for instance 'lmb_bram' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1665]
-WARNING: [Synth 8-7023] instance 'lmb_bram' of module 'design_2_lmb_bram_0' has 16 connections declared, but only 14 given [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1665]
-INFO: [Synth 8-6155] done synthesizing module 'microblaze_0_local_memory_imp_MFYM5E' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1448]
+INFO: [Synth 8-6157] synthesizing module 'design_2_QCS_0_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_QCS_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_QCS_0_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_QCS_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_QCS_AXI_0_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_QCS_AXI_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_QCS_AXI_0_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_QCS_AXI_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_axi_uartlite_0_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_axi_uartlite_0_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_clk_wiz_1_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_clk_wiz_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_clk_wiz_1_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_clk_wiz_1_0_stub.v:6]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:226]
+INFO: [Synth 8-6157] synthesizing module 'design_2_ila_0_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_ila_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_ila_0_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_ila_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_mdm_1_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_mdm_1_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_microblaze_0_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_microblaze_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_microblaze_0_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_microblaze_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_microblaze_0_axi_intc_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_microblaze_0_axi_intc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_microblaze_0_axi_intc_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_microblaze_0_axi_intc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_microblaze_0_axi_periph_0' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:466]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_11CD1WM' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1062]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_11CD1WM' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1062]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_TCH0CN' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1194]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_TCH0CN' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1194]
+INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_10F4R51' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1326]
+INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_10F4R51' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1326]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_ZF502S' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1706]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_ZF502S' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1706]
+INFO: [Synth 8-6157] synthesizing module 'design_2_xbar_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_xbar_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_microblaze_0_axi_periph_0' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:466]
+INFO: [Synth 8-6157] synthesizing module 'microblaze_0_local_memory_imp_MFYM5E' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1472]
+INFO: [Synth 8-6157] synthesizing module 'design_2_dlmb_bram_if_cntlr_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_dlmb_bram_if_cntlr_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_dlmb_v10_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_dlmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_dlmb_v10_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_dlmb_v10_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'design_2_dlmb_v10_0' is unconnected for instance 'dlmb_v10' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1618]
+WARNING: [Synth 8-7023] instance 'dlmb_v10' of module 'design_2_dlmb_v10_0' has 25 connections declared, but only 24 given [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1618]
+INFO: [Synth 8-6157] synthesizing module 'design_2_ilmb_bram_if_cntlr_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_ilmb_bram_if_cntlr_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_ilmb_v10_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_ilmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_ilmb_v10_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_ilmb_v10_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'design_2_ilmb_v10_0' is unconnected for instance 'ilmb_v10' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1664]
+WARNING: [Synth 8-7023] instance 'ilmb_v10' of module 'design_2_ilmb_v10_0' has 25 connections declared, but only 24 given [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1664]
+INFO: [Synth 8-6157] synthesizing module 'design_2_lmb_bram_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_lmb_bram_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_lmb_bram_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_lmb_bram_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'rsta_busy' of module 'design_2_lmb_bram_0' is unconnected for instance 'lmb_bram' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1689]
+WARNING: [Synth 8-7071] port 'rstb_busy' of module 'design_2_lmb_bram_0' is unconnected for instance 'lmb_bram' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1689]
+WARNING: [Synth 8-7023] instance 'lmb_bram' of module 'design_2_lmb_bram_0' has 16 connections declared, but only 14 given [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1689]
+INFO: [Synth 8-6155] done synthesizing module 'microblaze_0_local_memory_imp_MFYM5E' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:1472]
 INFO: [Synth 8-6157] synthesizing module 'design_2_microblaze_0_xlconcat_0' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_microblaze_0_xlconcat_0/synth/design_2_microblaze_0_xlconcat_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_4_xlconcat' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
 INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_4_xlconcat' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
 INFO: [Synth 8-6155] done synthesizing module 'design_2_microblaze_0_xlconcat_0' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_microblaze_0_xlconcat_0/synth/design_2_microblaze_0_xlconcat_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'design_2_rst_clk_wiz_1_100M_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_rst_clk_wiz_1_100M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_rst_clk_wiz_1_100M_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-1952294-duncan-Ub22/realtime/design_2_rst_clk_wiz_1_100M_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_rst_clk_wiz_1_100M_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_rst_clk_wiz_1_100M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_rst_clk_wiz_1_100M_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_rst_clk_wiz_1_100M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_2_rst_clk_wiz_1_100M_0' is unconnected for instance 'rst_clk_wiz_1_100M' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:447]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_2_rst_clk_wiz_1_100M_0' is unconnected for instance 'rst_clk_wiz_1_100M' [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:447]
+WARNING: [Synth 8-7023] instance 'rst_clk_wiz_1_100M' of module 'design_2_rst_clk_wiz_1_100M_0' has 10 connections declared, but only 8 given [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:447]
+INFO: [Synth 8-6157] synthesizing module 'design_2_seq_probe_wrapper_0_0' [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_seq_probe_wrapper_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_seq_probe_wrapper_0_0' (0#1) [/home/duncan/QCS/QCS.runs/synth_1/.Xil/Vivado-363598-duncan-Ub22/realtime/design_2_seq_probe_wrapper_0_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'design_2' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'design_2_wrapper' (0#1) [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/hdl/design_2_wrapper.v:13]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'QCS_AXI_0'. This will prevent further optimization [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:173]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'microblaze_0_axi_periph'. This will prevent further optimization [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:339]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_0'. This will prevent further optimization [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/synth/design_2.v:226]
 WARNING: [Synth 8-7129] Port In1[0] in module xlconcat_v2_1_4_xlconcat is either unconnected or has no load
 WARNING: [Synth 8-7129] Port In2[0] in module xlconcat_v2_1_4_xlconcat is either unconnected or has no load
 WARNING: [Synth 8-7129] Port In3[0] in module xlconcat_v2_1_4_xlconcat is either unconnected or has no load
@@ -191,18 +201,18 @@ WARNING: [Synth 8-7129] Port In99[0] in module xlconcat_v2_1_4_xlconcat is eithe
 WARNING: [Synth 8-7129] Port In100[0] in module xlconcat_v2_1_4_xlconcat is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2924.449 ; gain = 441.633 ; free physical = 2722 ; free virtual = 5983
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2944.762 ; gain = 443.672 ; free physical = 3842 ; free virtual = 13722
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2936.324 ; gain = 453.508 ; free physical = 2719 ; free virtual = 5980
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2959.605 ; gain = 458.516 ; free physical = 3843 ; free virtual = 13723
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2936.324 ; gain = 453.508 ; free physical = 2719 ; free virtual = 5980
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2959.605 ; gain = 458.516 ; free physical = 3843 ; free virtual = 13723
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2936.324 ; gain = 0.000 ; free physical = 2719 ; free virtual = 5980
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2959.605 ; gain = 0.000 ; free physical = 3843 ; free virtual = 13723
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -231,21 +241,18 @@ Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_rst
 Finished Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_rst_clk_wiz_1_100M_0/design_2_rst_clk_wiz_1_100M_0/QCS_1_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'design_2_i/rst_clk_wiz_1_100M'
 Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_axi_uartlite_0_0/design_2_axi_uartlite_0_0/QCS_1_axi_uartlite_0_0_in_context.xdc] for cell 'design_2_i/axi_uartlite_0'
 Finished Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_axi_uartlite_0_0/design_2_axi_uartlite_0_0/QCS_1_axi_uartlite_0_0_in_context.xdc] for cell 'design_2_i/axi_uartlite_0'
-Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_QCS_0_0/design_2_QCS_0_0/QCS_1_QCS_0_0_in_context.xdc] for cell 'design_2_i/QCS_0'
-Finished Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_QCS_0_0/design_2_QCS_0_0/QCS_1_QCS_0_0_in_context.xdc] for cell 'design_2_i/QCS_0'
-Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_encoding_sequencer_0_0/design_2_encoding_sequencer_0_0/seq_probe_encoding_sequencer_0_0_in_context.xdc] for cell 'design_2_i/encoding_sequencer_0'
-Finished Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_encoding_sequencer_0_0/design_2_encoding_sequencer_0_0/seq_probe_encoding_sequencer_0_0_in_context.xdc] for cell 'design_2_i/encoding_sequencer_0'
 Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_QCS_AXI_0_0/design_2_QCS_AXI_0_0/QCS_1_QCS_AXI_0_5_in_context.xdc] for cell 'design_2_i/QCS_AXI_0'
 Finished Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_QCS_AXI_0_0/design_2_QCS_AXI_0_0/QCS_1_QCS_AXI_0_5_in_context.xdc] for cell 'design_2_i/QCS_AXI_0'
+Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_seq_probe_wrapper_0_0/design_2_seq_probe_wrapper_0_0/design_2_seq_probe_wrapper_0_0_in_context.xdc] for cell 'design_2_i/seq_probe_wrapper_0'
+Finished Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_seq_probe_wrapper_0_0/design_2_seq_probe_wrapper_0_0/design_2_seq_probe_wrapper_0_0_in_context.xdc] for cell 'design_2_i/seq_probe_wrapper_0'
+Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_QCS_0_0/design_2_QCS_0_0/design_2_QCS_0_0_in_context.xdc] for cell 'design_2_i/QCS_0'
+Finished Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_QCS_0_0/design_2_QCS_0_0/design_2_QCS_0_0_in_context.xdc] for cell 'design_2_i/QCS_0'
+Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_ila_0_0/design_2_ila_0_0/design_2_ila_0_0_in_context.xdc] for cell 'design_2_i/ila_0'
+Finished Parsing XDC File [/home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_ila_0_0/design_2_ila_0_0/design_2_ila_0_0_in_context.xdc] for cell 'design_2_i/ila_0'
 Parsing XDC File [/home/duncan/QCS/QCS.srcs/constrs_1/new/a7-35t.xdc]
 Finished Parsing XDC File [/home/duncan/QCS/QCS.srcs/constrs_1/new/a7-35t.xdc]
 Parsing XDC File [/home/duncan/QCS/QCS.srcs/constrs_1/new/master.xdc]
-WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [/home/duncan/QCS/QCS.srcs/constrs_1/new/master.xdc:2]
-WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [/home/duncan/QCS/QCS.srcs/constrs_1/new/master.xdc:3]
 WARNING: [Vivado 12-584] No ports matched 'led_0'. [/home/duncan/QCS/QCS.srcs/constrs_1/new/master.xdc:27]
-WARNING: [Vivado 12-584] No ports matched 'led_1'. [/home/duncan/QCS/QCS.srcs/constrs_1/new/master.xdc:28]
-WARNING: [Vivado 12-584] No ports matched 'led_2'. [/home/duncan/QCS/QCS.srcs/constrs_1/new/master.xdc:29]
-WARNING: [Vivado 12-584] No ports matched 'led_3'. [/home/duncan/QCS/QCS.srcs/constrs_1/new/master.xdc:30]
 Finished Parsing XDC File [/home/duncan/QCS/QCS.srcs/constrs_1/new/master.xdc]
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/duncan/QCS/QCS.srcs/constrs_1/new/master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/design_2_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/duncan/QCS/QCS.srcs/constrs_1/new/master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_2_wrapper_propImpl.xdc].
@@ -254,29 +261,29 @@ Parsing XDC File [/home/duncan/QCS/QCS.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/home/duncan/QCS/QCS.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2985.250 ; gain = 0.000 ; free physical = 2711 ; free virtual = 5972
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3008.531 ; gain = 0.000 ; free physical = 3838 ; free virtual = 13718
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2985.250 ; gain = 0.000 ; free physical = 2711 ; free virtual = 5972
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3008.531 ; gain = 0.000 ; free physical = 3838 ; free virtual = 13718
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'design_2_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2718 ; free virtual = 5979
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3844 ; free virtual = 13724
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35ticsg324-1L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2718 ; free virtual = 5979
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3844 ; free virtual = 13724
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ_clk_n. (constraint file  /home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_clk_wiz_1_0/design_2_clk_wiz_1_0/design_2_clk_wiz_1_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ_clk_n. (constraint file  /home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_clk_wiz_1_0/design_2_clk_wiz_1_0/design_2_clk_wiz_1_0_in_context.xdc, line 4).
-Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ_clk_p. (constraint file  /home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_clk_wiz_1_0/design_2_clk_wiz_1_0/design_2_clk_wiz_1_0_in_context.xdc, line 5).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ_clk_p. (constraint file  /home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_clk_wiz_1_0/design_2_clk_wiz_1_0/design_2_clk_wiz_1_0_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clock. (constraint file  /home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_clk_wiz_1_0/design_2_clk_wiz_1_0/design_2_clk_wiz_1_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clock. (constraint file  /home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_clk_wiz_1_0/design_2_clk_wiz_1_0/design_2_clk_wiz_1_0_in_context.xdc, line 4).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/microblaze_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/microblaze_0_local_memory/dlmb_v10. (constraint file  auto generated constraint).
@@ -292,34 +299,16 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/mdm_1. (constraint fil
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/clk_wiz_1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/rst_clk_wiz_1_100M. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/axi_uartlite_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/QCS_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/encoding_sequencer_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/QCS_AXI_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/seq_probe_wrapper_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/QCS_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/ila_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2718 ; free virtual = 5980
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Preparing Guide Design
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Doing Graph Differ : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2718 ; free virtual = 5980
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3844 ; free virtual = 13724
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Preparing Guide Design : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2718 ; free virtual = 5980
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3845 ; free virtual = 13726
 ---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2718 ; free virtual = 5980
----------------------------------------------------------------------------------
-
-
-Incremental Synthesis Report Summary:
-
-1. Incremental synthesis run: no
-
-   Reason for not running incremental synthesis : synth_design options have changed between reference and incremental
-
-
-INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -341,25 +330,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2717 ; free virtual = 5984
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3853 ; free virtual = 13738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2726 ; free virtual = 5992
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3853 ; free virtual = 13738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2726 ; free virtual = 5992
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3853 ; free virtual = 13738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2727 ; free virtual = 5993
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3855 ; free virtual = 13740
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -377,37 +366,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2734 ; free virtual = 6001
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3849 ; free virtual = 13740
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2734 ; free virtual = 6001
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3849 ; free virtual = 13740
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2734 ; free virtual = 6001
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3849 ; free virtual = 13740
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2734 ; free virtual = 6001
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3849 ; free virtual = 13740
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2734 ; free virtual = 6001
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3849 ; free virtual = 13740
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2734 ; free virtual = 6001
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3849 ; free virtual = 13740
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -422,16 +411,17 @@ Report BlackBoxes:
 |3     |design_2_QCS_AXI_0_0             |         1|
 |4     |design_2_axi_uartlite_0_0        |         1|
 |5     |design_2_clk_wiz_1_0             |         1|
-|6     |design_2_encoding_sequencer_0_0  |         1|
+|6     |design_2_ila_0_0                 |         1|
 |7     |design_2_mdm_1_0                 |         1|
 |8     |design_2_microblaze_0_0          |         1|
 |9     |design_2_microblaze_0_axi_intc_0 |         1|
 |10    |design_2_rst_clk_wiz_1_100M_0    |         1|
-|11    |design_2_dlmb_bram_if_cntlr_0    |         1|
-|12    |design_2_dlmb_v10_0              |         1|
-|13    |design_2_ilmb_bram_if_cntlr_0    |         1|
-|14    |design_2_ilmb_v10_0              |         1|
-|15    |design_2_lmb_bram_0              |         1|
+|11    |design_2_seq_probe_wrapper_0_0   |         1|
+|12    |design_2_dlmb_bram_if_cntlr_0    |         1|
+|13    |design_2_dlmb_v10_0              |         1|
+|14    |design_2_ilmb_bram_if_cntlr_0    |         1|
+|15    |design_2_ilmb_v10_0              |         1|
+|16    |design_2_lmb_bram_0              |         1|
 +------+---------------------------------+----------+
 
 Report Cell Usage: 
@@ -444,7 +434,7 @@ Report Cell Usage:
 |4     |design_2_clk_wiz_1             |     1|
 |5     |design_2_dlmb_bram_if_cntlr    |     1|
 |6     |design_2_dlmb_v10              |     1|
-|7     |design_2_encoding_sequencer_0  |     1|
+|7     |design_2_ila_0                 |     1|
 |8     |design_2_ilmb_bram_if_cntlr    |     1|
 |9     |design_2_ilmb_v10              |     1|
 |10    |design_2_lmb_bram              |     1|
@@ -452,33 +442,34 @@ Report Cell Usage:
 |12    |design_2_microblaze_0          |     1|
 |13    |design_2_microblaze_0_axi_intc |     1|
 |14    |design_2_rst_clk_wiz_1_100M    |     1|
-|15    |design_2_xbar                  |     1|
-|16    |IBUF                           |     3|
-|17    |OBUF                           |     1|
+|15    |design_2_seq_probe_wrapper_0   |     1|
+|16    |design_2_xbar                  |     1|
+|17    |IBUF                           |     3|
+|18    |OBUF                           |     4|
 +------+-------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2734 ; free virtual = 6001
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3849 ; free virtual = 13740
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2985.250 ; gain = 453.508 ; free physical = 2734 ; free virtual = 6001
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2985.250 ; gain = 502.434 ; free physical = 2735 ; free virtual = 6001
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 3008.531 ; gain = 458.516 ; free physical = 3849 ; free virtual = 13740
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 3008.531 ; gain = 507.441 ; free physical = 3849 ; free virtual = 13740
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2985.250 ; gain = 0.000 ; free physical = 2964 ; free virtual = 6230
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3008.531 ; gain = 0.000 ; free physical = 4082 ; free virtual = 13973
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2985.250 ; gain = 0.000 ; free physical = 2995 ; free virtual = 6261
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3008.531 ; gain = 0.000 ; free physical = 4122 ; free virtual = 14012
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: db5be4e5
+Synth Design complete | Checksum: 7438cbb9
 INFO: [Common 17-83] Releasing license: Synthesis
-71 Infos, 116 Warnings, 0 Critical Warnings and 0 Errors encountered.
+78 Infos, 115 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2985.250 ; gain = 673.234 ; free physical = 2995 ; free virtual = 6261
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2556.750; main = 2248.574; forked = 360.852
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3919.395; main = 2953.238; forked = 966.156
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 3008.531 ; gain = 645.422 ; free physical = 4122 ; free virtual = 14012
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2684.892; main = 2400.732; forked = 390.704
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3942.676; main = 2976.520; forked = 966.156
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
 INFO: [Common 17-1381] The checkpoint '/home/duncan/QCS/QCS.runs/synth_1/design_2_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_2_wrapper_utilization_synth.rpt -pb design_2_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Oct 21 17:18:35 2024...
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 23 08:30:53 2024...
