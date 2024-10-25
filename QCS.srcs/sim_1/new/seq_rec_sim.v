@@ -8,24 +8,20 @@ module seq_rec_Testbench;
     wire ch_a;
     wire ch_b;
     reg ch_z;
-    reg [31:0] ppr;   // Pulses per revolution
 
     // Outputs
     wire ch_z_out;
     wire [31:0] REC;
     wire [31:0] RPM;
 
-    // Instantiate the QCS module (Unit Under Test)
+    // Instantiate the QCS module
     QCS uut (
-        .clk(clk),
-        .rst(rst),
-        .ch_a(ch_a),
-        .ch_b(ch_b),
-        .ch_z(ch_z),
-        .ppr(ppr),
-        .ch_z_out(ch_z_out),
-        .REC(REC),
-        .RPM(RPM)
+    .clk(clk),
+    .rst(rst),
+    .ch_a(ch_a),
+    .ch_b(ch_b),
+    .REC(REC),
+    .RPM(RPM)
     );
 
     // Instantiate the encoding_sequencer
@@ -44,7 +40,6 @@ module seq_rec_Testbench;
         clk = 0;
         rst = 1;
         ch_z = 0;
-        ppr = 600; // Set pulses per revolution to 600
 
         // Wait for global reset to finish
         #100;

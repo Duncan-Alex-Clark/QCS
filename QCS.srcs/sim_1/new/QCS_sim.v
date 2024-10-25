@@ -17,6 +17,15 @@ module QCS_tb;
   wire [31:0] REC;
   wire [31:0] RPM;
   
+  // seq_probe 
+  
+  seq_probe (
+    .clk_in_100mhz(clk),
+    .rst(rst),
+    .ch_a(ch_a),
+    .ch_b(ch_b)
+  );
+  
   // Instantiate the QCS module
   QCS uut (
     .clk(clk),
@@ -36,8 +45,8 @@ module QCS_tb;
     // Initialize all signals
     clk = 0;
     rst = 1;
-    ch_a = 0;
-    ch_b = 0;
+    //ch_a = 0;
+    //ch_b = 0;
     ppr = 600; // Set pulses per revolution to 600
 
     // Release reset after 100ns
@@ -48,23 +57,25 @@ module QCS_tb;
     // Create a simple sequence for quadrature encoder rotation
     // (The following sequence is just for simulation purposes)
     
-    repeat (10) begin
-      #100; ch_a = 1; ch_b = 0;  // First transition
-      #100; ch_a = 1; ch_b = 1;  // Second transition
-      #100; ch_a = 0; ch_b = 1;  // Third transition
-      #100; ch_a = 0; ch_b = 0;  // Fourth transition (full cycle)
-    end
+//    repeat(1000000) #10;
+    
+//    repeat (10) begin
+//      #100; ch_a = 1; ch_b = 0;  // First transition
+//      #100; ch_a = 1; ch_b = 1;  // Second transition
+//      #100; ch_a = 0; ch_b = 1;  // Third transition
+//      #100; ch_a = 0; ch_b = 0;  // Fourth transition (full cycle)
+//    end
 
-    // Wait for some time to observe REC and RPM values
-    #500;
+//    // Wait for some time to observe REC and RPM values
+//    #500;
 
-    // Simulate faster pulses for higher RPM
-    repeat (20) begin
-      #50; ch_a = 1; ch_b = 0;   // First transition
-      #50; ch_a = 1; ch_b = 1;   // Second transition
-      #50; ch_a = 0; ch_b = 1;   // Third transition
-      #50; ch_a = 0; ch_b = 0;   // Fourth transition
-    end
+//    // Simulate faster pulses for higher RPM
+//    repeat (20) begin
+//      #50; ch_a = 1; ch_b = 0;   // First transition
+//      #50; ch_a = 1; ch_b = 1;   // Second transition
+//      #50; ch_a = 0; ch_b = 1;   // Third transition
+//      #50; ch_a = 0; ch_b = 0;   // Fourth transition
+//    end
 
     // End simulation after some more time
     #1000;

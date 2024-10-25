@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "QCS,Vivado 2023.1" *)
 (* CHECK_LICENSE_TYPE = "design_2_QCS_0_0,QCS,{}" *)
-(* CORE_GENERATION_INFO = "design_2_QCS_0_0,QCS,{x_ipProduct=Vivado 2023.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=QCS,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,rpm_lut_size=1}" *)
+(* CORE_GENERATION_INFO = "design_2_QCS_0_0,QCS,{x_ipProduct=Vivado 2023.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=QCS,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,rpm_lut_size=1,ROM_WIDTH=16,ROM_ADDR_BITS=14}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_2_QCS_0_0 (
@@ -60,12 +60,14 @@ module design_2_QCS_0_0 (
   rst,
   ch_a,
   ch_b,
-  ppr,
   REC,
-  RPM
+  RPM,
+  CH_COUNTER,
+  ADDR,
+  CLK_COUNTER
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_2_clk_wiz_1_0_clk_out1, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
@@ -73,19 +75,25 @@ input wire clk;
 input wire rst;
 input wire ch_a;
 input wire ch_b;
-input wire [31 : 0] ppr;
 output wire [31 : 0] REC;
 output wire [31 : 0] RPM;
+output wire [15 : 0] CH_COUNTER;
+output wire [13 : 0] ADDR;
+output wire [31 : 0] CLK_COUNTER;
 
   QCS #(
-    .rpm_lut_size(1)
+    .rpm_lut_size(1),
+    .ROM_WIDTH(16),
+    .ROM_ADDR_BITS(14)
   ) inst (
     .clk(clk),
     .rst(rst),
     .ch_a(ch_a),
     .ch_b(ch_b),
-    .ppr(ppr),
     .REC(REC),
-    .RPM(RPM)
+    .RPM(RPM),
+    .CH_COUNTER(CH_COUNTER),
+    .ADDR(ADDR),
+    .CLK_COUNTER(CLK_COUNTER)
   );
 endmodule

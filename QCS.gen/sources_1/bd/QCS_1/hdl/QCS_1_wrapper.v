@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-//Date        : Mon Oct 21 17:05:37 2024
+//Date        : Thu Oct 24 19:50:51 2024
 //Host        : duncan-Ub22 running 64-bit Ubuntu 22.04.5 LTS
 //Command     : generate_target QCS_1_wrapper.bd
 //Design      : QCS_1_wrapper
@@ -11,39 +11,31 @@
 `timescale 1 ps / 1 ps
 
 module QCS_1_wrapper
-   (CLK100MHZ,
-    btn_0,
-    led_1,
-    led_2,
-    led_3,
-    reset,
-    usb_uart_rxd,
-    usb_uart_txd);
-  input CLK100MHZ;
-  input btn_0;
-  output led_1;
-  output led_2;
-  output led_3;
-  input reset;
-  input usb_uart_rxd;
-  output usb_uart_txd;
+   (REC_0,
+    RPM_0,
+    ch_a_0,
+    ch_b_0,
+    clk_0,
+    rst_0);
+  output [31:0]REC_0;
+  output [31:0]RPM_0;
+  input ch_a_0;
+  input ch_b_0;
+  input clk_0;
+  input rst_0;
 
-  wire CLK100MHZ;
-  wire btn_0;
-  wire led_1;
-  wire led_2;
-  wire led_3;
-  wire reset;
-  wire usb_uart_rxd;
-  wire usb_uart_txd;
+  wire [31:0]REC_0;
+  wire [31:0]RPM_0;
+  wire ch_a_0;
+  wire ch_b_0;
+  wire clk_0;
+  wire rst_0;
 
   QCS_1 QCS_1_i
-       (.CLK100MHZ(CLK100MHZ),
-        .btn_0(btn_0),
-        .led_1(led_1),
-        .led_2(led_2),
-        .led_3(led_3),
-        .reset(reset),
-        .usb_uart_rxd(usb_uart_rxd),
-        .usb_uart_txd(usb_uart_txd));
+       (.REC_0(REC_0),
+        .RPM_0(RPM_0),
+        .ch_a_0(ch_a_0),
+        .ch_b_0(ch_b_0),
+        .clk_0(clk_0),
+        .rst_0(rst_0));
 endmodule

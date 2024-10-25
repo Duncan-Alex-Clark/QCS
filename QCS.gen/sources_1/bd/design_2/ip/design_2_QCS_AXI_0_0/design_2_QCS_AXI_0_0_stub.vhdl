@@ -2,11 +2,11 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
--- Date        : Wed Oct 16 06:42:31 2024
+-- Date        : Thu Oct 24 18:38:51 2024
 -- Host        : duncan-Ub22 running 64-bit Ubuntu 22.04.5 LTS
--- Command     : write_vhdl -force -mode synth_stub -rename_top design_2_QCS_AXI_0_0 -prefix
---               design_2_QCS_AXI_0_0_ QCS_1_QCS_AXI_0_5_stub.vhdl
--- Design      : QCS_1_QCS_AXI_0_5
+-- Command     : write_vhdl -force -mode synth_stub
+--               /home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_QCS_AXI_0_0/design_2_QCS_AXI_0_0_stub.vhdl
+-- Design      : design_2_QCS_AXI_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35ticsg324-1L
 -- --------------------------------------------------------------------------------
@@ -17,7 +17,6 @@ entity design_2_QCS_AXI_0_0 is
   Port ( 
     rec : in STD_LOGIC_VECTOR ( 31 downto 0 );
     rpm : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    ppr : out STD_LOGIC_VECTOR ( 31 downto 0 );
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
@@ -47,7 +46,7 @@ architecture stub of design_2_QCS_AXI_0_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "rec[31:0],rpm[31:0],ppr[31:0],s00_axi_aclk,s00_axi_aresetn,s00_axi_awaddr[5:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[5:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready";
+attribute black_box_pad_pin of stub : architecture is "rec[31:0],rpm[31:0],s00_axi_aclk,s00_axi_aresetn,s00_axi_awaddr[5:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[5:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "QCS_AXI_v1_0,Vivado 2023.1";
 begin

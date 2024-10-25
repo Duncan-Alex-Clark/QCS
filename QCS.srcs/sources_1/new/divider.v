@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-localparam integer clk_bit = 4;
+localparam integer clk_bit = 0;
 
 module divider(
     input wire [31:0] counter,

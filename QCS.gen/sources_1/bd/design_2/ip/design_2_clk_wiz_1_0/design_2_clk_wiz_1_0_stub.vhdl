@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
--- Date        : Wed Oct 23 04:58:55 2024
+-- Date        : Thu Oct 24 18:38:51 2024
 -- Host        : duncan-Ub22 running 64-bit Ubuntu 22.04.5 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/duncan/QCS/QCS.gen/sources_1/bd/design_2/ip/design_2_clk_wiz_1_0/design_2_clk_wiz_1_0_stub.vhdl

@@ -26,3 +26,40 @@ platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
 platform generate -domains 
 platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
 platform generate -domains 
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate -domains 
+platform active {design_2_wrapper}
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate -domains 
+platform active {design_2_wrapper}
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate -domains 
+platform active {design_2_wrapper}
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/duncan/QCS/design_2_wrapper.xsa}
+platform generate -domains 

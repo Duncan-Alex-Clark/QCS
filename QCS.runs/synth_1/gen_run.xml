@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1729686604" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/design_1_wrapper.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1729815220" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/design_1_wrapper.dcp">
   <File Type="VDS-TIMINGSUMMARY" Name="design_2_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="design_2_wrapper.dcp"/>
   <File Type="RDS-UTIL-PB" Name="design_2_wrapper_utilization_synth.pb"/>
@@ -158,20 +158,16 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_ila_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_seq_probe_wrapper_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="seq_probe_encoding_sequencer_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_lmb_bram_0"/>
   <BlockFileSet Type="BlockSrcs" Name="seq_probe_divider_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_QCS_AXI_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="seq_probe_encoding_sequencer_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="seq_probe_c_counter_binary_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="QCS_1_dlmb_bram_if_cntlr_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="QCS_1_lmb_bram_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_clk_wiz_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="QCS_1_clk_wiz_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_microblaze_0_axi_intc_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_QCS_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_xbar_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="QCS_1_ilmb_bram_if_cntlr_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_microblaze_0_1"/>
 </GenRun>

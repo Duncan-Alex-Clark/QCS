@@ -149,6 +149,7 @@ OPTRACE "add files" START { }
   set_param project.isImplRun true
   add_files /home/duncan/QCS/QCS.srcs/sources_1/bd/seq_probe/seq_probe.bd
   add_files /home/duncan/QCS/QCS.srcs/sources_1/bd/design_2/design_2.bd
+  add_files /home/duncan/QCS/QCS.srcs/sources_1/bd/QCS_1/QCS_1.bd
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
   read_xdc /home/duncan/QCS/QCS.srcs/constrs_1/new/a7-35t.xdc

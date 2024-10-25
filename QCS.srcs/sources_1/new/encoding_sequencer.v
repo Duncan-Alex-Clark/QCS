@@ -16,14 +16,14 @@ module encoding_sequencer(
 //    localparam integer MAX_COUNT = 2400*20; // How many rotations before advancing to the next RPM? 2400 * numRotations
     
     // Define the states of the state machine
-    reg [1:0] state;
-    reg [1:0] next_state;
+//    reg [1:0] state;
+//    reg [1:0] next_state;
     
     
     // Define the channel registers, define the sequence states, and assign to outputs
     reg ch_a_reg;
     reg ch_b_reg;
-    reg clk_enable;
+//    reg clk_enable;
     reg [1:0] seq_state;
     reg [1:0] seq_next_state;
     assign ch_a = ch_a_reg;

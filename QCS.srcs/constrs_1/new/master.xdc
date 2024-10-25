@@ -37,8 +37,8 @@ set_property -dict {PACKAGE_PIN D9 IOSTANDARD LVCMOS33} [get_ports btn_0]
 
 ## RGB LEDs
 
-#set_property CONFIG_VOLTAGE 3.3 [current_design]
-#set_property CFGBVS VCCO [current_design]
+set_property CONFIG_VOLTAGE 3.3 [current_design]
+set_property CFGBVS VCCO [current_design]
 
 #set_property DRIVE 12 [get_ports led_0]
 

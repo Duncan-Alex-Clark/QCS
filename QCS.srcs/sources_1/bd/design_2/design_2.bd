@@ -7,7 +7,8 @@
       "name": "design_2",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2023.1"
+      "tool_version": "2023.1",
+      "validated": "true"
     },
     "design_tree": {
       "microblaze_0": "",
@@ -32,8 +33,8 @@
       "rst_clk_wiz_1_100M": "",
       "axi_uartlite_0": "",
       "QCS_AXI_0": "",
-      "QCS_0": "",
       "ila_0": "",
+      "QCS_0": "",
       "seq_probe_wrapper_0": ""
     },
     "interface_ports": {
@@ -58,6 +59,10 @@
         "type": "rst",
         "direction": "I",
         "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
           "POLARITY": {
             "value": "ACTIVE_LOW"
           }
@@ -65,7 +70,17 @@
       },
       "btn_0": {
         "type": "rst",
-        "direction": "I"
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
       },
       "led_1": {
         "direction": "O"
@@ -80,8 +95,20 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_2_sys_clock",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "100000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
           },
           "PHASE": {
             "value": "0.0"
@@ -816,6 +843,9 @@
           "CLKOUT1_PHASE_ERROR": {
             "value": "105.461"
           },
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "100"
+          },
           "CLKOUT2_DRIVES": {
             "value": "BUFG"
           },
@@ -848,6 +878,9 @@
           },
           "MMCM_COMPENSATION": {
             "value": "ZHOLD"
+          },
+          "MMCM_DIVCLK_DIVIDE": {
+            "value": "1"
           },
           "PRIMITIVE": {
             "value": "PLL"
@@ -903,6 +936,35 @@
         "xci_path": "ip/design_2_QCS_AXI_0_0/design_2_QCS_AXI_0_0.xci",
         "inst_hier_path": "QCS_AXI_0"
       },
+      "ila_0": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "xci_name": "design_2_ila_0_0",
+        "xci_path": "ip/design_2_ila_0_0/design_2_ila_0_0.xci",
+        "inst_hier_path": "ila_0",
+        "parameters": {
+          "C_MONITOR_TYPE": {
+            "value": "Native"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "7"
+          },
+          "C_PROBE0_WIDTH": {
+            "value": "32"
+          },
+          "C_PROBE1_WIDTH": {
+            "value": "32"
+          },
+          "C_PROBE2_WIDTH": {
+            "value": "16"
+          },
+          "C_PROBE3_WIDTH": {
+            "value": "14"
+          },
+          "C_PROBE4_WIDTH": {
+            "value": "32"
+          }
+        }
+      },
       "QCS_0": {
         "vlnv": "xilinx.com:module_ref:QCS:1.0",
         "xci_name": "design_2_QCS_0_0",
@@ -934,11 +996,6 @@
           "ch_b": {
             "direction": "I"
           },
-          "ppr": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
           "REC": {
             "direction": "O",
             "left": "31",
@@ -948,17 +1005,21 @@
             "direction": "O",
             "left": "31",
             "right": "0"
-          }
-        }
-      },
-      "ila_0": {
-        "vlnv": "xilinx.com:ip:ila:6.2",
-        "xci_name": "design_2_ila_0_0",
-        "xci_path": "ip/design_2_ila_0_0/design_2_ila_0_0.xci",
-        "inst_hier_path": "ila_0",
-        "parameters": {
-          "C_SLOT_0_AXI_PROTOCOL": {
-            "value": "AXI4LITE"
+          },
+          "CH_COUNTER": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "ADDR": {
+            "direction": "O",
+            "left": "13",
+            "right": "0"
+          },
+          "CLK_COUNTER": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
           }
         }
       },
@@ -974,7 +1035,13 @@
         },
         "ports": {
           "btn_0": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
           },
           "ch_a_out": {
             "direction": "O"
@@ -983,7 +1050,21 @@
             "direction": "O"
           },
           "clk_in_100mhz": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_1_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "led_1": {
             "direction": "O"
@@ -1019,8 +1100,7 @@
       "microblaze_0_axi_periph_M02_AXI": {
         "interface_ports": [
           "QCS_AXI_0/S00_AXI",
-          "microblaze_0_axi_periph/M02_AXI",
-          "ila_0/SLOT_0_AXI"
+          "microblaze_0_axi_periph/M02_AXI"
         ]
       },
       "microblaze_0_debug": {
@@ -1055,22 +1135,36 @@
       }
     },
     "nets": {
+      "QCS_0_ADDR": {
+        "ports": [
+          "QCS_0/ADDR",
+          "ila_0/probe3"
+        ]
+      },
+      "QCS_0_CH_COUNTER": {
+        "ports": [
+          "QCS_0/CH_COUNTER",
+          "ila_0/probe2"
+        ]
+      },
+      "QCS_0_CLK_COUNTER": {
+        "ports": [
+          "QCS_0/CLK_COUNTER",
+          "ila_0/probe4"
+        ]
+      },
       "QCS_0_REC": {
         "ports": [
           "QCS_0/REC",
-          "QCS_AXI_0/rec"
+          "QCS_AXI_0/rec",
+          "ila_0/probe0"
         ]
       },
       "QCS_0_RPM": {
         "ports": [
           "QCS_0/RPM",
-          "QCS_AXI_0/rpm"
-        ]
-      },
-      "QCS_AXI_0_ppr": {
-        "ports": [
-          "QCS_AXI_0/ppr",
-          "QCS_0/ppr"
+          "QCS_AXI_0/rpm",
+          "ila_0/probe1"
         ]
       },
       "axi_uartlite_0_interrupt": {
@@ -1099,10 +1193,10 @@
           "microblaze_0_axi_periph/M00_ACLK",
           "microblaze_0_axi_periph/ACLK",
           "microblaze_0_axi_periph/M02_ACLK",
-          "QCS_AXI_0/s00_axi_aclk",
-          "QCS_0/clk",
           "rst_clk_wiz_1_100M/slowest_sync_clk",
+          "QCS_AXI_0/s00_axi_aclk",
           "ila_0/clk",
+          "QCS_0/clk",
           "seq_probe_wrapper_0/clk_in_100mhz"
         ]
       },
@@ -1153,20 +1247,22 @@
           "microblaze_0_axi_intc/s_axi_aresetn",
           "axi_uartlite_0/s_axi_aresetn",
           "microblaze_0_axi_periph/M01_ARESETN",
-          "QCS_AXI_0/s00_axi_aresetn",
-          "microblaze_0_axi_periph/M02_ARESETN"
+          "microblaze_0_axi_periph/M02_ARESETN",
+          "QCS_AXI_0/s00_axi_aresetn"
         ]
       },
       "seq_probe_wrapper_0_ch_a_out": {
         "ports": [
           "seq_probe_wrapper_0/ch_a_out",
-          "QCS_0/ch_a"
+          "QCS_0/ch_a",
+          "ila_0/probe5"
         ]
       },
       "seq_probe_wrapper_0_ch_b_out": {
         "ports": [
           "seq_probe_wrapper_0/ch_b_out",
-          "QCS_0/ch_b"
+          "QCS_0/ch_b",
+          "ila_0/probe6"
         ]
       },
       "seq_probe_wrapper_0_led_1": {

@@ -5,83 +5,113 @@ module QCS(
 	input wire rst,
 	input wire ch_a,
 	input wire ch_b,
-	input wire [31:0] ppr,
 	output wire [31:0] REC,
-	output wire [31:0] RPM
+	output wire [31:0] RPM,
+	
+	// Test points
+	output wire [15:0] CH_COUNTER,
+	output wire [13:0] ADDR,
+	output wire [31:0] CLK_COUNTER
 );
 
+
+
 // Define module constants
-localparam [31:0] clk_f = 100_000_000; // clock frequency
 localparam integer clk_count_max = 1_000_000; // count how many pulses per 1,000,000 clock cycles
-localparam integer rpm_min = 3;
-localparam integer rpm_max = 15_000;
-localparam integer scale_factor = 1000;
 localparam [1:0] STATE_1 = 2'b00;
 localparam [1:0] STATE_2 = 2'b10;
 localparam [1:0] STATE_3 = 2'b11;
 localparam [1:0] STATE_4 = 2'b01;
 
 // Define module registers
-reg lut_initialized;
 reg [1:0] state;
 reg [1:0] next_state;
-reg [31:0] ppr_reg;
-reg [31:0] rpm_reg;
+reg [15:0] rpm_reg;
 reg [31:0] rec_reg;
 reg [31:0] clk_counter;
-reg [31:0] ch_counter;
+reg [15:0] ch_counter;
+
 
 // Define module variables
 parameter integer rpm_lut_size = 1<<16;
 
-// Define LUTs
-wire [31:0] rpm_lut [0:rpm_lut_size-1];
-
 // Define combinational assignments
-assign RPM = rpm_reg;
+assign RPM[15:0] = rpm_reg;
+assign RPM[31:16] = 0;
 assign REC = rec_reg;
 
-// Create LUT for 600 ppr
-//always @* begin: lut
-//    integer i;
-//    case (i)
-//        generate
-//        endgenerate
-//    endcase
-//end
 
+// Create LUT for 600 ppr based on precompiled list of values
+// See QCS/outputs for the script for creating the lut values
+   parameter ROM_WIDTH = 16;
+   parameter ROM_ADDR_BITS = 14;
 
-generate
-    localparam integer ch_count_min = (rpm_min * (600 * 4 * (clk_count_max * scale_factor / clk_f))) / (60 * scale_factor);
-    localparam integer ch_count_max = (rpm_max * (600 * 4 * (clk_count_max * scale_factor / clk_f))) / (60 * scale_factor);
-//    always @* begin
-        for (genvar i = 0; i < rpm_lut_size; i = i + 1) begin
-            assign rpm_lut[i] = (60*i)/24;
-        end
-//    end
-endgenerate
+   (* rom_style="{distributed | block}" *)
+   reg [ROM_WIDTH-1:0] rpmlut [(2**ROM_ADDR_BITS)-1:0];
+   reg [ROM_WIDTH-1:0] rpmlut_data;
+
+   reg [ROM_ADDR_BITS-1:0] rpmlut_addr;
+   
+   // Test points for debugging
+   assign CH_COUNTER = ch_counter;
+   assign ADDR = rpmlut_addr;
+   assign CLK_COUNTER = clk_counter;
+   // End test points for debugging
+
+   initial
+      $readmemh("/home/duncan/QCS/output/rpm_lut_init.mem", rpmlut, 0, (2**ROM_ADDR_BITS)-1);
+
+   always @(posedge clk) rpmlut_data <= (rst) ? 0 : rpmlut[rpmlut_addr];
+
 
 // Count the number of clock cycles
 // Reset after the clk_count_max is reached
 always @(posedge clk or posedge rst) begin
 	if (rst) clk_counter <= 0;
 	else if (clk_counter < clk_count_max) clk_counter <= clk_counter + 1;
-	else clk_counter <= 0;
+	else if (!ch_counter) clk_counter <= 0;
+	else clk_counter <= clk_counter;
 end
 
 // Count the channel changes
 // Reset after the clk_count_max is reached
-always @(ch_a or ch_b or rst) begin
-	if (rst) ch_counter <= 0;
-	else if (clk_counter < clk_count_max) ch_counter <= ch_counter + 1;
-	else ch_counter <= 0; // Once clk_count_max is reached, restart counter
+reg ch_a_reg, ch_b_reg;
+reg ch_a_prev, ch_b_prev;
+always @(posedge clk or posedge rst) begin
+    if (rst) begin
+        ch_a_reg <= 0;
+        ch_b_reg <= 0;
+        ch_a_prev <= 0;
+        ch_b_prev <= 0;
+    end 
+    else begin
+        ch_a_prev <= ch_a_reg;
+        ch_b_prev <= ch_b_reg;
+        ch_a_reg <= ch_a;
+        ch_b_reg <= ch_b;
+    end
 end
 
-// Update the value of next_state
-always @(*) begin
-	if (rst) next_state <= STATE_1;
-	else next_state <= {ch_a, ch_b};
+always @(posedge clk or posedge rst) begin
+    if (rst) begin
+        ch_counter <= 0;
+        rpmlut_addr <= 0;
+    end 
+    else begin
+        // Detect edge changes on ch_a or ch_b
+        if ((ch_a_reg != ch_a_prev) || (ch_b_reg != ch_b_prev)) begin
+            ch_counter <= ch_counter + 1;
+        end
+        if (clk_counter >= clk_count_max) begin
+            ch_counter <= 0;  // Reset ch_counter when clk_counter reaches max
+            rpmlut_addr <= ch_counter;  // Update LUT address
+        end
+    end
 end
+//assign rpmlut_addr = ch_counter;
+
+// Update the value of next_state
+always @(*) next_state <= (rst) ? STATE_1 : {ch_a, ch_b};
 
 // Calculate the REC
 always @(posedge clk or posedge rst) begin
@@ -120,8 +150,12 @@ end
 // Calculate RPM on every reset of clk_counter
 // Keep RPM unchanged until clk_counter resets
 always @(posedge clk or posedge rst) begin
-	if (rst) rpm_reg <= 0;
-	else if (!clk_counter) rpm_reg <= rpm_lut[ch_counter]; // When clk_counter == 0, update the rpm_reg
+	if (rst) rpm_reg <= 1;
+	else if (!clk_counter) begin
+	   rpm_reg <= rpmlut_data; // When clk_counter == 0, update the rpm_reg
+	   $display("ch_counter: %d", rpmlut_addr);
+	end
 	else rpm_reg <= rpm_reg;
 end
+
 endmodule

@@ -62,9 +62,6 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_rs
 # IP: bd/design_2/ip/design_2_axi_uartlite_0_0/design_2_axi_uartlite_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_axi_uartlite_0_0 || ORIG_REF_NAME==design_2_axi_uartlite_0_0} -quiet] -quiet
 
-# IP: bd/design_2/ip/design_2_QCS_AXI_0_0/design_2_QCS_AXI_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_QCS_AXI_0_0 || ORIG_REF_NAME==design_2_QCS_AXI_0_0} -quiet] -quiet
-
 # IP: bd/design_2/ip/design_2_seq_probe_wrapper_0_0/design_2_seq_probe_wrapper_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_seq_probe_wrapper_0_0 || ORIG_REF_NAME==design_2_seq_probe_wrapper_0_0} -quiet] -quiet
 
@@ -80,14 +77,25 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_se
 # IP: bd/seq_probe/ip/seq_probe_encoding_sequencer_0_0/seq_probe_encoding_sequencer_0_0.xci
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==seq_probe_encoding_sequencer_0_0 || ORIG_REF_NAME==seq_probe_encoding_sequencer_0_0} -quiet] -quiet
 
+# IP: bd/design_2/ip/design_2_QCS_AXI_0_0/design_2_QCS_AXI_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_QCS_AXI_0_0 || ORIG_REF_NAME==design_2_QCS_AXI_0_0} -quiet] -quiet
+
 # IP: bd/design_2/ip/design_2_QCS_0_0/design_2_QCS_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_QCS_0_0 || ORIG_REF_NAME==design_2_QCS_0_0} -quiet] -quiet
 
 # IP: bd/design_2/ip/design_2_ila_0_0/design_2_ila_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_ila_0_0 || ORIG_REF_NAME==design_2_ila_0_0} -quiet] -quiet
 
+# Block Designs: bd/QCS_1/QCS_1.bd
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==QCS_1 || ORIG_REF_NAME==QCS_1} -quiet] -quiet
+
+# IP: bd/QCS_1/ip/QCS_1_QCS_0_1/QCS_1_QCS_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==QCS_1_QCS_0_1 || ORIG_REF_NAME==QCS_1_QCS_0_1} -quiet] -quiet
+
 # XDC: /home/duncan/QCS/QCS.gen/sources_1/bd/seq_probe/seq_probe_ooc.xdc
 
 # XDC: /home/duncan/QCS/QCS.gen/sources_1/bd/seq_probe/seq_probe_ooc.xdc
 
 # XDC: /home/duncan/QCS/QCS.gen/sources_1/bd/design_2/design_2_ooc.xdc
+
+# XDC: /home/duncan/QCS/QCS.gen/sources_1/bd/QCS_1/QCS_1_ooc.xdc

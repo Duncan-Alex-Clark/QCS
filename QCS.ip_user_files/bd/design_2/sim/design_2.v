@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-//Date        : Mon Oct 21 17:16:33 2024
+//Date        : Thu Oct 24 18:37:22 2024
 //Host        : duncan-Ub22 running 64-bit Ubuntu 22.04.5 LTS
 //Command     : generate_target design_2.bd
 //Design      : design_2
@@ -10,36 +10,34 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_2,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_2,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=22,numReposBlks=16,numNonXlnxBlks=1,numHierBlks=6,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=3,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_2.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_2,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_2,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=22,numReposBlks=16,numNonXlnxBlks=1,numHierBlks=6,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=4,da_clkrst_cnt=9,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_2.hwdef" *) 
 module design_2
-   (CLK100MHZ_clk_n,
-    CLK100MHZ_clk_p,
-    btn_0,
+   (btn_0,
+    led_1,
+    led_2,
+    led_3,
     reset,
+    sys_clock,
     usb_uart_rxd,
     usb_uart_txd);
-  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 CLK100MHZ " *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK100MHZ, CAN_DEBUG false, FREQ_HZ 100000000" *) input CLK100MHZ_clk_n;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 CLK100MHZ " *) input CLK100MHZ_clk_p;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.BTN_0 RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.BTN_0, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input btn_0;
+  output led_1;
+  output led_2;
+  output led_3;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input reset;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYS_CLOCK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYS_CLOCK, CLK_DOMAIN design_2_sys_clock, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input sys_clock;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart RxD" *) input usb_uart_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart TxD" *) output usb_uart_txd;
 
-  wire CLK_IN1_D_0_1_CLK_N;
-  wire CLK_IN1_D_0_1_CLK_P;
-  wire [31:0]QCS_0_REC;
-  wire [31:0]QCS_0_RPM;
-  wire QCS_0_ch_z_out;
-  wire [31:0]QCS_AXI_0_ppr;
+  wire [31:0]QCS_1_wrapper_0_REC_0;
+  wire [31:0]QCS_1_wrapper_0_RPM_0;
   wire axi_uartlite_0_UART_RxD;
   wire axi_uartlite_0_UART_TxD;
   wire axi_uartlite_0_interrupt;
   wire btn_0_1;
+  wire clk_wiz_1_clk_out1;
   wire clk_wiz_1_locked;
-  wire encoding_sequencer_0_ch_a;
-  wire encoding_sequencer_0_ch_b;
   wire mdm_1_debug_sys_rst;
-  wire microblaze_0_Clk;
   wire [31:0]microblaze_0_axi_dp_ARADDR;
   wire [2:0]microblaze_0_axi_dp_ARPROT;
   wire [0:0]microblaze_0_axi_dp_ARREADY;
@@ -146,32 +144,34 @@ module design_2
   wire [0:0]microblaze_0_intr;
   wire reset_1;
   wire [0:0]rst_clk_wiz_1_100M_bus_struct_reset;
-  wire [0:0]rst_clk_wiz_1_100M_interconnect_aresetn;
   wire rst_clk_wiz_1_100M_mb_reset;
   wire [0:0]rst_clk_wiz_1_100M_peripheral_aresetn;
-  wire [0:0]rst_clk_wiz_1_100M_peripheral_reset;
+  wire seq_probe_wrapper_0_ch_a_out;
+  wire seq_probe_wrapper_0_ch_b_out;
+  wire seq_probe_wrapper_0_led_1;
+  wire seq_probe_wrapper_0_led_2;
+  wire seq_probe_wrapper_0_led_3;
+  wire sys_clock_1;
 
-  assign CLK_IN1_D_0_1_CLK_N = CLK100MHZ_clk_n;
-  assign CLK_IN1_D_0_1_CLK_P = CLK100MHZ_clk_p;
   assign axi_uartlite_0_UART_RxD = usb_uart_rxd;
   assign btn_0_1 = btn_0;
+  assign led_1 = seq_probe_wrapper_0_led_1;
+  assign led_2 = seq_probe_wrapper_0_led_2;
+  assign led_3 = seq_probe_wrapper_0_led_3;
   assign reset_1 = reset;
+  assign sys_clock_1 = sys_clock;
   assign usb_uart_txd = axi_uartlite_0_UART_TxD;
-  design_2_QCS_0_0 QCS_0
-       (.REC(QCS_0_REC),
-        .RPM(QCS_0_RPM),
-        .ch_a(encoding_sequencer_0_ch_b),
-        .ch_b(encoding_sequencer_0_ch_a),
-        .ch_z(QCS_0_ch_z_out),
-        .ch_z_out(QCS_0_ch_z_out),
-        .clk(microblaze_0_Clk),
-        .ppr(QCS_AXI_0_ppr),
-        .rst(rst_clk_wiz_1_100M_interconnect_aresetn));
+  design_2_QCS_1_wrapper_0_0 QCS_1_wrapper_0
+       (.REC_0(QCS_1_wrapper_0_REC_0),
+        .RPM_0(QCS_1_wrapper_0_RPM_0),
+        .ch_a_0(seq_probe_wrapper_0_ch_a_out),
+        .ch_b_0(seq_probe_wrapper_0_ch_b_out),
+        .clk_0(clk_wiz_1_clk_out1),
+        .rst_0(btn_0_1));
   design_2_QCS_AXI_0_0 QCS_AXI_0
-       (.ppr(QCS_AXI_0_ppr),
-        .rec(QCS_0_REC),
-        .rpm(QCS_0_RPM),
-        .s00_axi_aclk(microblaze_0_Clk),
+       (.rec(QCS_1_wrapper_0_REC_0),
+        .rpm(QCS_1_wrapper_0_RPM_0),
+        .s00_axi_aclk(clk_wiz_1_clk_out1),
         .s00_axi_araddr(microblaze_0_axi_periph_M02_AXI_ARADDR[5:0]),
         .s00_axi_aresetn(rst_clk_wiz_1_100M_peripheral_aresetn),
         .s00_axi_arprot(microblaze_0_axi_periph_M02_AXI_ARPROT),
@@ -195,7 +195,7 @@ module design_2
   design_2_axi_uartlite_0_0 axi_uartlite_0
        (.interrupt(axi_uartlite_0_interrupt),
         .rx(axi_uartlite_0_UART_RxD),
-        .s_axi_aclk(microblaze_0_Clk),
+        .s_axi_aclk(clk_wiz_1_clk_out1),
         .s_axi_araddr(microblaze_0_axi_periph_M01_AXI_ARADDR[3:0]),
         .s_axi_aresetn(rst_clk_wiz_1_100M_peripheral_aresetn),
         .s_axi_arready(microblaze_0_axi_periph_M01_AXI_ARREADY),
@@ -216,16 +216,10 @@ module design_2
         .s_axi_wvalid(microblaze_0_axi_periph_M01_AXI_WVALID),
         .tx(axi_uartlite_0_UART_TxD));
   design_2_clk_wiz_1_0 clk_wiz_1
-       (.clk_in1_n(CLK_IN1_D_0_1_CLK_N),
-        .clk_in1_p(CLK_IN1_D_0_1_CLK_P),
-        .clk_out1(microblaze_0_Clk),
+       (.clk_in1(sys_clock_1),
+        .clk_out1(clk_wiz_1_clk_out1),
         .locked(clk_wiz_1_locked),
         .resetn(reset_1));
-  design_2_encoding_sequencer_0_0 encoding_sequencer_0
-       (.ch_a(encoding_sequencer_0_ch_a),
-        .ch_b(encoding_sequencer_0_ch_b),
-        .clk(microblaze_0_Clk),
-        .rst(rst_clk_wiz_1_100M_peripheral_reset));
   design_2_mdm_1_0 mdm_1
        (.Dbg_Capture_0(microblaze_0_debug_CAPTURE),
         .Dbg_Clk_0(microblaze_0_debug_CLK),
@@ -241,7 +235,7 @@ module design_2
   (* KEEP_HIERARCHY = "yes" *) 
   design_2_microblaze_0_0 microblaze_0
        (.Byte_Enable(microblaze_0_dlmb_1_BE),
-        .Clk(microblaze_0_Clk),
+        .Clk(clk_wiz_1_clk_out1),
         .DCE(microblaze_0_dlmb_1_CE),
         .DReady(microblaze_0_dlmb_1_READY),
         .DUE(microblaze_0_dlmb_1_UE),
@@ -297,9 +291,9 @@ module design_2
         .intr(microblaze_0_intr),
         .irq(microblaze_0_interrupt_INTERRUPT),
         .processor_ack({microblaze_0_interrupt_ACK[0],microblaze_0_interrupt_ACK[1]}),
-        .processor_clk(microblaze_0_Clk),
+        .processor_clk(clk_wiz_1_clk_out1),
         .processor_rst(rst_clk_wiz_1_100M_mb_reset),
-        .s_axi_aclk(microblaze_0_Clk),
+        .s_axi_aclk(clk_wiz_1_clk_out1),
         .s_axi_araddr(microblaze_0_intc_axi_ARADDR[8:0]),
         .s_axi_aresetn(rst_clk_wiz_1_100M_peripheral_aresetn),
         .s_axi_arready(microblaze_0_intc_axi_ARREADY),
@@ -319,9 +313,9 @@ module design_2
         .s_axi_wstrb(microblaze_0_intc_axi_WSTRB),
         .s_axi_wvalid(microblaze_0_intc_axi_WVALID));
   design_2_microblaze_0_axi_periph_0 microblaze_0_axi_periph
-       (.ACLK(microblaze_0_Clk),
+       (.ACLK(clk_wiz_1_clk_out1),
         .ARESETN(rst_clk_wiz_1_100M_peripheral_aresetn),
-        .M00_ACLK(microblaze_0_Clk),
+        .M00_ACLK(clk_wiz_1_clk_out1),
         .M00_ARESETN(rst_clk_wiz_1_100M_peripheral_aresetn),
         .M00_AXI_araddr(microblaze_0_intc_axi_ARADDR),
         .M00_AXI_arready(microblaze_0_intc_axi_ARREADY),
@@ -340,7 +334,7 @@ module design_2
         .M00_AXI_wready(microblaze_0_intc_axi_WREADY),
         .M00_AXI_wstrb(microblaze_0_intc_axi_WSTRB),
         .M00_AXI_wvalid(microblaze_0_intc_axi_WVALID),
-        .M01_ACLK(microblaze_0_Clk),
+        .M01_ACLK(clk_wiz_1_clk_out1),
         .M01_ARESETN(rst_clk_wiz_1_100M_peripheral_aresetn),
         .M01_AXI_araddr(microblaze_0_axi_periph_M01_AXI_ARADDR),
         .M01_AXI_arready(microblaze_0_axi_periph_M01_AXI_ARREADY),
@@ -359,7 +353,7 @@ module design_2
         .M01_AXI_wready(microblaze_0_axi_periph_M01_AXI_WREADY),
         .M01_AXI_wstrb(microblaze_0_axi_periph_M01_AXI_WSTRB),
         .M01_AXI_wvalid(microblaze_0_axi_periph_M01_AXI_WVALID),
-        .M02_ACLK(microblaze_0_Clk),
+        .M02_ACLK(clk_wiz_1_clk_out1),
         .M02_ARESETN(rst_clk_wiz_1_100M_peripheral_aresetn),
         .M02_AXI_araddr(microblaze_0_axi_periph_M02_AXI_ARADDR),
         .M02_AXI_arprot(microblaze_0_axi_periph_M02_AXI_ARPROT),
@@ -380,7 +374,7 @@ module design_2
         .M02_AXI_wready(microblaze_0_axi_periph_M02_AXI_WREADY),
         .M02_AXI_wstrb(microblaze_0_axi_periph_M02_AXI_WSTRB),
         .M02_AXI_wvalid(microblaze_0_axi_periph_M02_AXI_WVALID),
-        .S00_ACLK(microblaze_0_Clk),
+        .S00_ACLK(clk_wiz_1_clk_out1),
         .S00_ARESETN(rst_clk_wiz_1_100M_peripheral_aresetn),
         .S00_AXI_araddr(microblaze_0_axi_dp_ARADDR),
         .S00_AXI_arprot(microblaze_0_axi_dp_ARPROT),
@@ -421,22 +415,28 @@ module design_2
         .ILMB_ready(microblaze_0_ilmb_1_READY),
         .ILMB_ue(microblaze_0_ilmb_1_UE),
         .ILMB_wait(microblaze_0_ilmb_1_WAIT),
-        .LMB_Clk(microblaze_0_Clk),
+        .LMB_Clk(clk_wiz_1_clk_out1),
         .SYS_Rst(rst_clk_wiz_1_100M_bus_struct_reset));
   design_2_microblaze_0_xlconcat_0 microblaze_0_xlconcat
        (.In0(axi_uartlite_0_interrupt),
         .dout(microblaze_0_intr));
   design_2_rst_clk_wiz_1_100M_0 rst_clk_wiz_1_100M
-       (.aux_reset_in(btn_0_1),
+       (.aux_reset_in(1'b1),
         .bus_struct_reset(rst_clk_wiz_1_100M_bus_struct_reset),
         .dcm_locked(clk_wiz_1_locked),
         .ext_reset_in(reset_1),
-        .interconnect_aresetn(rst_clk_wiz_1_100M_interconnect_aresetn),
         .mb_debug_sys_rst(mdm_1_debug_sys_rst),
         .mb_reset(rst_clk_wiz_1_100M_mb_reset),
         .peripheral_aresetn(rst_clk_wiz_1_100M_peripheral_aresetn),
-        .peripheral_reset(rst_clk_wiz_1_100M_peripheral_reset),
-        .slowest_sync_clk(microblaze_0_Clk));
+        .slowest_sync_clk(clk_wiz_1_clk_out1));
+  design_2_seq_probe_wrapper_0_0 seq_probe_wrapper_0
+       (.btn_0(btn_0_1),
+        .ch_a_out(seq_probe_wrapper_0_ch_a_out),
+        .ch_b_out(seq_probe_wrapper_0_ch_b_out),
+        .clk_in_100mhz(clk_wiz_1_clk_out1),
+        .led_1(seq_probe_wrapper_0_led_1),
+        .led_2(seq_probe_wrapper_0_led_2),
+        .led_3(seq_probe_wrapper_0_led_3));
 endmodule
 
 module design_2_microblaze_0_axi_periph_0
